@@ -7,6 +7,14 @@
     "concurrently": "^9.2.0"
   },
   "scripts":{
-    "watch:home": "tailwindcss -i ./home.css -o ./hometailwind.css --content index.html --watch"
-  }
+    "watch:home": "tailwindcss -i ./home.css -o ./hometailwind.css --content index.html --watch",
+    "watch:horror": "tailwindcss -i ./pages/horror/horror.css -o ./pages/horror/horrortailwind.css --content ./pages/horror/horror.html --watch",
+    "watch:comedy": "tailwindcss -i ./pages/comedy/comedy.css -o ./pages/comedy/comedytailwind.css --content ./pages/comedy/comedy.html --watch",
+    "watch:romance": "tailwindcss -i ./pages/romance/romance.css -o ./pages/romance/romancetailwind.css --content ./pages/romance/romance.html --watch",
+    "watch:adventure": "tailwindcss -i ./pages/adventure/adventure.css -o ./pages/adventure/adventuretailwind.css --content ./pages/adventure/adventure.html --watch",
+    "watch:scifi": "tailwindcss -i ./pages/sci-fi/sciFi.css -o ./pages/sci-fi/sciFi-tailwind.css --content ./pages/sci-fi/sciFi.html --watch",
+    "watch:thriller": "tailwindcss -i ./pages/thriller/thriller.css -o ./pages/thriller/thriller-tailwind.css --content ./pages/thriller/thriller.html --watch",
+    "watch:magic": "tailwindcss -i  ./pages/magic/magic.css -o ./pages/magic/magic-tailwind.css --content ./pages/magic/magic.html --watch",
+    "watch": "concurrently \"npm run watch:home\" \"npm run watch:horror\" \"npm run watch:comedy\" \"npm run watch:romance\" \"npm run watch:adventure\" \"npm run watch:scifi\" \"npm run watch:thriller\" \"npm run watch:magic\" \"npm run watch:thriller\""
+    }
 }
