@@ -7,28 +7,80 @@
     <link rel="stylesheet" href="hometailwind.css" />
     <link rel="stylesheet" href="custom-home.css" />
   </head>
-  <body class="bg-[#cadf9e] flex flex-col items-center mt-5 md:justify-center h-screen font-cursive md:overflow-hidden">
-    <h1 class="text-4xl text-center font-medium md:text-6xl">Welcome to Story Stitchers!</h1>
-    <button class="my-10 text-2xl bg-[#386641] rounded-full text-[#cadf9e] font-semibold border-2 border-[#313628] btn overflow-clip px-4 py-2 md:text-4xl"> <a href="level.html">Click to start</a> </button>
-    <div id="instructions" class="text-center flex flex-col items-center gap-10 px-5 md:flex-row">
-        <div id="howToPlay" class="text-left border-2 border-[#313628] bg-[#f0f0f0a6] p-5 rounded-lg shadow-lg w-full max-w-md md:hover:-translate-y-3 transition-transform duration-300 ease-in-out md:hover:bg-[#f0f0f083]">
+  <body class="relative">
+    <!-- HOME SECTION -->
+    <div id="home-section" class="bg-[#cadf9e] flex flex-col items-center py-5  min-h-screen font-cursive z-2 absolute transition-all duration-1000 ease-in-out md:overflow-hidden md:justify-center md:w-screen">
+      <h1 class="text-4xl text-center font-medium md:text-6xl">
+        Welcome to Story Stitchers!
+      </h1>
+      <button
+        class="my-10 text-2xl bg-[#386641] rounded-full text-[#cadf9e] font-semibold border-2 border-[#313628] btn overflow-clip px-4 py-2 md:text-4xl" id="start-btn"
+      >
+        <p>Click to start</p>
+      </button>
+      <div
+        id="instructions"
+        class="text-center flex flex-col items-center gap-5 px-5 md:gap-10 md:flex-row"
+      >
+        <div
+          id="howToPlay"
+          class="text-left border-2 border-[#313628] bg-[#f0f0f0a6] p-5 rounded-lg shadow-lg w-full max-w-md md:hover:-translate-y-3 transition-transform duration-300 ease-in-out md:hover:bg-[#f0f0f083]"
+        >
           <h3 class="text-xl font-semibold mb-2">How to Play</h3>
-          <ol class="list-decimal pl-5 text-[17px] flex flex-col gap-2 md:text-xl">
-              <li>Click the Start button to begin.</li>
-              <li>Select your level thoughtfully; each level offers unique challenges.</li>
-              <li> Select your category as per your needs. </li>
-              <li>Read the provided story hint carefully.</li>
-              <li>Choose the most appropriate words to complete the story.</li>
-              <li>Click Submit to view your generated story.</li>
+          <ol
+            class="list-decimal pl-5 text-[17px] flex flex-col gap-2 md:text-xl"
+          >
+            <li>Click the Start button to begin.</li>
+            <li>
+              Select your level thoughtfully; each level offers unique
+              challenges.
+            </li>
+            <li>Select your category as per your needs.</li>
+            <li>Read the provided story hint carefully.</li>
+            <li>Choose the most appropriate words to complete the story.</li>
+            <li>Click Submit to view your generated story.</li>
           </ol>
         </div>
-      <div id="rules" class="text-left border-2 border-[#313628] bg-[#f0f0f0af] p-5 rounded-lg shadow-lg w-full max-w-md md:h-full md:hover:-translate-y-3 transition-transform duration-300 ease-in-out md:hover:bg-[#f0f0f083] ">
-        <h3 class="text-xl font-semibold mb-2">Rules</h3>
-        <ol class="list-decimal pl-5 text-[17px] flex flex-col gap-2 md:text-xl">
-          <li>Read each story prompt carefully.</li>
-          <li>Ensure your responses are relevant to the ongoing story.</li>
-        </ol>
+        <div
+          id="rules"
+          class="text-left border-2 border-[#313628] bg-[#f0f0f0af] p-5 rounded-lg shadow-lg w-full max-w-md md:h-92.5 md:hover:-translate-y-3 transition-transform duration-300 ease-in-out md:hover:bg-[#f0f0f083]"
+        >
+          <h3 class="text-xl font-semibold mb-2">Rules</h3>
+          <ol
+            class="list-decimal pl-5 text-[17px] flex flex-col gap-2 md:text-xl"
+          >
+            <li>Read each story prompt carefully.</li>
+            <li>Ensure your responses are relevant to the ongoing story.</li>
+          </ol>
+        </div>
       </div>
     </div>
+    <!-- LEVELS SECTION -->
+    <div id="levels-section" class="pt-5 flex flex-col items-center font-cursive bg-[#ffe7ec] px-5 transition-all duration-300 ease-in-out min-h-screen absolute inset-0 z-1 opacity-0 md:pt-18">
+    <h1 class="text-[10vw] font-medium mb-10 md:text-[6vw]"> Choose Your level</h1>
+    <div id="buttons" class="w-12/12 flex justify-center gap-3">
+        <button class="text-xl py-2 px-4 bg-gray-50 border-2 border-red-400 rounded-xl" id="easy"> <a href="category/categories.html">Easy </a></button>
+        <button class="text-xl py-2 px-4 bg-gray-50 border-2 border-red-400 rounded-xl" id="medium"> <a href="category/categories.html">Medium</a></button>
+        <button class="text-xl py-2 px-4 bg-gray-50 border-2 border-red-400 rounded-xl" id="hard"> <a href="category/categories.html">Hard </a></button>
+    </div>
+    <div id="message" class="mt-10 flex flex-col items-center gap-8 md:flex-row md:px-5 md:gap-12">
+        <div id="easy-msg" class="flex flex-col items-start gap-1 transition-all ease-in-out duration-300 md:scale-100 md:border-r-[1px] md:border-gray-400 md:pr-5">
+            <h3 class="text-[7vw] font-medium md:text-[2.5vw]">Easy Level contains</h3> <div id="line" class="w-full h-[1px] bg-gray-400"></div>
+            <h4 class="text-[4.5vw] md:text-[1.3vw]">1. <b>40 seconds</b> Time to read hint and select word </h4>
+            <h4 class="text-[4.5vw] md:text-[1.3vw]">2. <b> 100 - 120 </b> Maximum Length of words </h4>
+        </div>
+        <div id="medium-msg" class="flex flex-col items-start gap-1 transition-all ease-in-out duration-300 md:scale-100 md:border-r-[1px] md:border-gray-400 md:pr-5">
+            <h3 class="text-[7vw] font-medium md:text-[2.5vw]">Medium Level contains</h3> <div id="line" class="w-full h-[1px] bg-gray-400"></div>
+            <h4 class="text-[4.5vw] md:text-[1.3vw]">1. <b>60 seconds</b> Time to read hint and select word </h4>
+            <h4 class="text-[4.5vw] md:text-[1.3vw]">2. <b> 150 - 170 </b> Maximum Length of words </h4>
+        </div>
+        <div id="hard-msg" class="flex flex-col items-start gap-1 transition-all ease-in-out duration-300 md:scale-100">
+            <h3 class="text-[7vw] font-medium md:text-[2.5vw]">Hard Level contains</h3> <div id="line" class="w-full h-[1px] bg-gray-400"></div>
+            <h4 class="text-[4.5vw] md:text-[1.3vw]">1. <b>80 seconds</b> Time to read hint and select word </h4>
+            <h4 class="text-[4.5vw] md:text-[1.3vw]">2. <b> 200 - 220 </b> Maximum Length of words </h4>
+        </div>
+    </div>
+    </div>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
