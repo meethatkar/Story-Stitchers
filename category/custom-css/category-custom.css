@@ -1,0 +1,113 @@
+/* HORRROR VIEW */
+.mobile-view{
+    background-image: url(/category/assets/category-main-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #2d003f;
+}
+.mobile-view-btn{
+    background-color: rgba(128, 128, 128, 0.404);
+    border: 2px solid green;
+    color: rgb(1, 58, 1);
+}
+/* .horror-mob{
+    background-size: cover;
+    background-image: url(/category/assets/horror-mobile.avif);
+    color: #b1001d;
+    -webkit-text-stroke: 1px  rgb(54, 54, 54);
+}
+.horror-btn-mob{
+    background-color: rgba(204, 54, 54, 0.349);
+    color: gray;
+} */
+.horror-desktop{
+    background-image: url(/category/assets/horror-desktop.avif);
+    background-size: cover;
+    background-position: center;
+    color: rgb(117, 117, 117);
+    opacity: 0;
+}
+.horror-btn-desk{
+    background-color: rgba(0, 0, 0, 0.514);
+    color: rgb(117, 117, 117);
+}
+
+/* comedy 
+.comedy-mob{
+    background-size: cover;
+    background-position: center;
+} */
+
+/*  thriller */
+/* .thriller-mob{
+    background-image: url(/category/assets/thriller-mob.avif);
+    background-size: cover;
+    background-position: 0% 50%;
+    color: #a1a1a1;
+}
+.thriller-btn-mob{
+    background-color: rgba(124, 243, 243, 0.26);
+    color: #0A1C2C ;
+} */
+.thriller-desk{
+    background-image: url(/category/assets/thriller-desktop.avif);
+    background-size: cover;
+    background-position: center 75%;
+    color:#8f8f8f;
+}
+.thriller-btn-desk{
+    background-color: rgba(128, 128, 128, 0.322);
+    color: rgb(170, 170, 170);
+}
+
+
+/* adventure */
+.adventure{
+    background-image: url(/category/assets/adventure-desktop.jpg);
+    background-position: center 100%;
+    background-size: cover;
+    color: rgba(255, 255, 255, 0.690)
+}
+.adventure-btn-desk{
+    background-color: rgba(255, 136, 0, 0.435);
+    color: beige;
+    border: 1px solid orangered;
+}
+
+/* romance */
+.romance{
+    background-image: url(/category/assets/romance-desktop.jpeg);
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 255, 255, 0.795);
+    -webkit-text-stroke: 1px #2b6be1;
+}
+.romance-btn-desk{
+    background-color: rgba(255, 192, 203, 0.719);
+    color: #2b6be1d5;
+}
+
+/* comedy */
+.comedy{
+    background-image: url(/category/assets/comedy.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.comedy-btn-desk{
+    background-color: rgba(255,255,255,0.5);
+    color: #223f88d0;
+}
+
+/* sci-fi */
+.sci-fi{
+    background-image: url(/category/assets/sci-fi-desktop.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #91bdec;
+    -webkit-text-stroke: 1px #ACC6E2;
+}
+.sci-fi-btn-desk{
+    background-color: #d5af8679;
+    color: whitesmoke;
+    -webkit-text-stroke: 1px white;
+}
