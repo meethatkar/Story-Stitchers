@@ -16,6 +16,7 @@
     "watch:thriller": "tailwindcss -i ./pages/thriller/thriller.css -o ./pages/thriller/thriller-tailwind.css --content ./pages/thriller/thriller.html --watch",
     "watch:magic": "tailwindcss -i  ./pages/magic/magic.css -o ./pages/magic/magic-tailwind.css --content ./pages/magic/magic.html --watch",
     "watch:levels":"tailwindcss -i ./level.css -o ./level-tailwind.css --content ./level.html --watch",
+    "watch:category":"tailwindcss -i ./category/categories.css -o ./category/categories-tailwind.css --content ./category/categories.html --watch",
     "watch:all": "concurrently \"npm run watch:home\" \"npm run watch:horror\" \"npm run watch:comedy\" \"npm run watch:romance\" \"npm run watch:adventure\" \"npm run watch:scifi\" \"npm run watch:thriller\" \"npm run watch:magic\" \"npm run watch:thriller\" \"npm run watch:levels\""
     }
 }
