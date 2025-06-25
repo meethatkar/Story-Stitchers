@@ -1,6 +1,6 @@
 /* HORRROR VIEW */
 .mobile-view{
-    background-image: url(/category/assets/category-main-mobile.jpg);
+    background-image: url(../assets/category-main-mobile.jpg);
     background-size: cover;
     background-position: center;
     color: #2d003f;
