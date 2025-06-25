@@ -21,7 +21,7 @@
     color: gray;
 } */
 .horror-desktop{
-    background-image: url(/category/assets/horror-desktop.avif);
+    background-image: url(../assets/horror-desktop.avif);
     background-size: cover;
     background-position: center;
     color: rgb(117, 117, 117);
@@ -30,6 +30,7 @@
 .horror-btn-desk{
     background-color: rgba(0, 0, 0, 0.514);
     color: rgb(117, 117, 117);
+    backdrop-filter: blur(3px);
 }
 
 /* comedy 
@@ -50,7 +51,7 @@
     color: #0A1C2C ;
 } */
 .thriller-desk{
-    background-image: url(/category/assets/thriller-desktop.avif);
+    background-image: url(../assets/thriller-desktop.avif);
     background-size: cover;
     background-position: center 75%;
     color:#8f8f8f;
@@ -58,12 +59,13 @@
 .thriller-btn-desk{
     background-color: rgba(128, 128, 128, 0.322);
     color: rgb(170, 170, 170);
+    backdrop-filter: blur(3px);
 }
 
 
 /* adventure */
 .adventure{
-    background-image: url(/category/assets/adventure-desktop.jpg);
+    background-image: url(../assets/adventure-desktop.jpg);
     background-position: center 100%;
     background-size: cover;
     color: rgba(255, 255, 255, 0.690)
@@ -72,35 +74,39 @@
     background-color: rgba(255, 136, 0, 0.435);
     color: beige;
     border: 1px solid orangered;
+    backdrop-filter: blur(3px);
 }
 
 /* romance */
 .romance{
-    background-image: url(/category/assets/romance-desktop.jpeg);
+    background-image: url(../assets/romance-desktop.jpeg);
     background-size: cover;
     background-position: center;
     color: rgba(255, 255, 255, 0.795);
     -webkit-text-stroke: 1px #2b6be1;
 }
 .romance-btn-desk{
-    background-color: rgba(255, 192, 203, 0.568);
+    background-color: rgba(255, 192, 203, 0.425);
     color: #2b6be1d5;
+    backdrop-filter: blur(3px);
+    border: 1px solid pink;
 }
 
 /* comedy */
 .comedy{
-    background-image: url(/category/assets/comedy.jpg);
+    background-image: url(../assets/comedy.jpg);
     background-position: center;
     background-size: cover;
 }
 .comedy-btn-desk{
     background-color: rgba(255,255,255,0.5);
     color: #223f88d0;
+    backdrop-filter: blur(3px);
 }
 
 /* sci-fi */
 .sci-fi{
-    background-image: url(/category/assets/sci-fi-desktop.jpg);
+    background-image: url(../assets/sci-fi-desktop.jpg);
     background-size: cover;
     background-position: center;
     color: #91bdec;
@@ -110,4 +116,6 @@
     background-color: #d5af8679;
     color: whitesmoke;
     -webkit-text-stroke: 1px white;
+    backdrop-filter: blur(3px);
+    border: 1px solid rgb(240, 185, 84);
 }
