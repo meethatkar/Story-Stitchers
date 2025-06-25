@@ -1,0 +1,38 @@
+body{
+    background-image: url("/pages/horror/horror-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0%;
+}
+
+#hint-block{
+    background-color: rgba(0, 0, 0, 0.308);
+    /* backdrop-filter: blur(3px); */
+}
+
+.hint-btn{
+    font-size: 4vw;
+    color: aliceblue;
+    padding: 2% 5%;
+    background-color: rgba(38, 80, 122, 0.233);
+    border-radius: 10px;
+    border: 1px solid rgba(67, 154, 204, 0.438);
+}
+
+.summary-text{
+    width: 90vw;
+    text-align: center;
+    color: rgb(255, 223, 180);
+    background-color: rgba(71, 61, 139, 0.432);
+    border-radius: 20px;
+    padding: 3% 5%;
+    margin-bottom: 6px;
+}
+
+.story-title{
+    font-size: 10vw;
+    margin-bottom: 12px;
+    color: rgb(138, 3, 3);
+    font-weight: 900;
+    text-shadow: 2px 3px 5px saddlebrown;
+}

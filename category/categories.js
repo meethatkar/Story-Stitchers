@@ -1,5 +1,8 @@
 let btnDivs = document.querySelectorAll(".category-btns");
+let links = document.querySelectorAll(".category-btns a")
 let wrapper = document.querySelector("#wrapper-div");
+let body = document.getElementsByTagName("body");
+
 let horrorBtn = document.querySelector("#horror");
 let thrillerBtn = document.querySelector("#thriller");
 let adventureBtn = document.querySelector("#adventure");
@@ -10,8 +13,46 @@ let scifiBtn =document.querySelector("#scifi");
 var isEntered = false;
 
 if(window.innerWidth>765){
+    hoverEffects();
+    // HORIZONTAL TRANSITION
+    btnDivs.forEach((elem,index)=>{
+        elem.addEventListener("click",(event)=>{
+            event.preventDefault();
+            console.log("prenvented");
+            wrapper.style.transform = "translateX(-100vw)";
+            setTimeout(() => {
+                window.location.href = links[index].href;
+            }, 300);
+        })
+    })
+}
+else{
+    mobileView();
+    // VERTICAL TRANSITION
+    btnDivs.forEach((elem,index)=>{
+        // debugger;
+        elem.addEventListener("click",(event)=>{
+            event.preventDefault();
+            console.log("prenvented");
+            wrapper.style.transform = "translateY(-100%)";
+            setTimeout(() => {
+                window.location.href = links[index].href;
+            }, 400);
+        })
+    })
+}
 
-    // horrorDESK();
+
+function mobileView(){
+    wrapper.classList.add("mobile-view");
+    btnDivs.forEach((elem)=>{
+        elem.classList.add("mobile-view-btn");        
+    })
+}
+
+// HOVER EFFECT FUNCTION
+function hoverEffects(){
+        // horrorDESK();
     horrorBtn.addEventListener("mouseenter",()=>{
         horrorDESK();
         isEntered = true;
@@ -69,16 +110,6 @@ if(window.innerWidth>765){
     scifiBtn.addEventListener("mouseleave",()=>{
         scifiDESK();
         isEntered = false;
-    })
-}
-else{
-    mobileView();
-}
-
-function mobileView(){
-    wrapper.classList.add("mobile-view");
-    btnDivs.forEach((elem)=>{
-        elem.classList.add("mobile-view-btn");        
     })
 }
 
