@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>horiffic Stories</title>
     <link rel="stylesheet" href="horrortailwind.css">
+    <link rel="stylesheet" href="custom-horror.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
 </head>
-<body class="bg-black flex justify-center items-center">
-    <h1 class="text-white"> Welcome to horror world </h1>
+<body class="bg-black h-screen w-screen flex flex-col justify-center items-center font-cursive">
+    <div id="timer" class="h-15 w-36 my-3 text-center text-white text-shadow-yellow-950
+    text-shadow-lg">
+        <p class="text-5xl"> 00:00 </p>
+    </div>
+
+    <div id="title">
+
+    </div>
+    <div id="summary" class="text-center">
+        <span class="text-[5vw] text-gray-100"> Summary of Story  </span>
+    </div>
+
+    <!-- HINT -->
+    <div id="hint-text" class="flex items-center gap-1 mb-2">
+        <i class="ri-corner-left-down-line text-3xl translate-y-2 text-gray-400"></i>
+        <h1 class="text-violet-300 text-3xl"> Hints </h1>
+        <i class="ri-corner-right-down-line text-3xl translate-y-2 text-gray-400"></i>
+    </div>
+    <div id="hint-block" class="flex flex-wrap backdrop-blur-[3px] gap-5 rounded-xl py-4 px-5 justify-center mx-5">
+    </div>
+    <script src="horror.js"></script>
 </body>
 </html>
