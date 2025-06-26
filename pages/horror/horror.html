@@ -12,26 +12,27 @@
 />
 </head>
 <body class="bg-black h-screen w-screen flex flex-col justify-center items-center font-pangolin font-semibold md:font-cursive md:justify-around md:overflow-x-hidden">
-    <div id="timer" class="h-15 w-36 my-3 text-center text-white text-shadow-yellow-950
+    <div id="timer" class="h-15 w-1/2 my-3 text-center text-white text-shadow-yellow-950
     text-shadow-lg md:my-0">
-        <p class="text-5xl"> 00:00 </p>
+        <p class="text-3xl md:text-5xl"> 00:00 </p>
     </div>
 
     <div id="title">
 
     </div>
     <div id="summary" class="text-center">
-        <span class="text-[5vw] text-gray-100 md:text-[3vw]"> Summary of Story  </span>
+        <span class="text-[4vw] text-gray-100 md:text-[3vw]"> Summary of Story  </span>
     </div>
 
     <!-- HINT -->
-    <div id="hint-text" class="flex items-center mb-2 text-[4.5vw] md:text-[2vw]">
+    <div id="hint-text" class="flex items-center mb-2 text-[4vw] md:text-[2vw]">
     <i class="ri-corner-left-down-line translate-y-2 text-gray-400"></i>
-        <h1 class="text-violet-300"> Select Words to complete the unseen story </h1>
+        <h1 class="text-violet-300"> Select the words to complete the unseen story </h1>
         <i class="ri-corner-right-down-line translate-y-2 text-gray-400"></i>
     </div>
     <div id="hint-block" class="flex flex-wrap backdrop-blur-[3px] gap-5 rounded-xl py-4 px-5 justify-center mx-5 md:gap-10 md:px-0">
     </div>
-    <script src="horror.js"></script>
+    <script src="stories.js" type="module"></script>
+    <script src="horror.js" type="module"></script>
 </body>
 </html>
