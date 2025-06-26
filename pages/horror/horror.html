@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>horiffic Stories</title>
-    <link rel="stylesheet" href="horrortailwind.css">
-    <link rel="stylesheet" href="custom-horror.css">
+    <link rel="stylesheet" href="horrortailwind.css" />
+    <link rel="stylesheet" href="custom-horror.css" />
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-</head>
-<body class="bg-black h-screen w-screen flex flex-col justify-center items-center font-pangolin font-semibold md:font-cursive md:justify-around md:overflow-x-hidden">
-    <div id="timer" class="h-15 w-1/2 my-3 text-center text-white text-shadow-yellow-950
-    text-shadow-lg md:my-0">
-        <p class="text-3xl md:text-5xl"> 00:00 </p>
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-black h-screen w-screen flex flex-col justify-center items-center font-pangolin font-semibold overflow-x-hidden md:font-cursive md:justify-around"
+  >
+    <div
+      id="timer"
+      class="h-15 w-1/2 my-3 text-center text-white text-shadow-yellow-950 text-shadow-lg md:my-0"
+    >
+      <p class="text-3xl md:text-5xl">00:00</p>
     </div>
 
-    <div id="title">
-
-    </div>
+    <div id="title"></div>
     <div id="summary" class="text-center">
-        <span class="text-[4vw] text-gray-100 md:text-[3vw]"> Summary of Story  </span>
+      <span class="text-[4vw] text-gray-100 md:text-[2.5vw]">
+        Summary of Story
+      </span>
     </div>
 
     <!-- HINT -->
     <div id="hint-text" class="flex items-center mb-2 text-[4vw] md:text-[2vw]">
-    <i class="ri-corner-left-down-line translate-y-2 text-gray-400"></i>
-        <h1 class="text-violet-300"> Select the words to complete the unseen story </h1>
-        <i class="ri-corner-right-down-line translate-y-2 text-gray-400"></i>
+      <i class="ri-corner-left-down-line translate-y-2 text-gray-400"></i>
+      <h1 class="text-violet-300">
+        Select the words to complete the unseen story
+      </h1>
+      <i class="ri-corner-right-down-line translate-y-2 text-gray-400"></i>
     </div>
-    <div id="hint-block" class="flex flex-wrap backdrop-blur-[3px] gap-5 rounded-xl py-4 px-5 justify-center mx-5 md:gap-10 md:px-0">
+    <div
+      id="hint-block"
+      class="flex flex-wrap backdrop-blur-[3px] gap-5 rounded-xl pt-4 pb-16 px-5 justify-center mx-5 relative md:gap-10 md:px-20"
+    >
+      <div id="reset-btn" class="absolute bottom-3 left-[20%]  text-white md:text-2xl md:left-[25%]">
+        <button class="bg-blue-300/50 px-2 py-[2px] rounded-lg">Reset</button>
+      </div>
+      <div id="submit-btn" class="absolute bottom-3 right-[20%]  text-white md:text-2xl md:right-[25%]">
+        <button class="bg-green-300/50 px-2 py-[2px] rounded-lg">Reveal Story </button>
+      </div>
     </div>
     <script src="stories.js" type="module"></script>
     <script src="horror.js" type="module"></script>
-</body>
+  </body>
 </html>

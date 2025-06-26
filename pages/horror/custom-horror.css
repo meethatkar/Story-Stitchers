@@ -36,6 +36,10 @@ body{
 .hint-clicked{
     background-color: rgba(38, 80, 122, 0.753);
 }
+#reset-btn>button,#submit-btn>button{
+    padding: 2px 8px;
+    border-radius: 10px;
+}
 
 
 .summary-text{
