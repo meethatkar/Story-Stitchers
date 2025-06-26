@@ -54,9 +54,9 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --font-roboto: 'Roboto', sans-serif;
-    --font-cursive: 'Caveat', cursive;
+    --font-cursive: "Caveat",cursive;
     --font-pangolin: 'Pangolin';
+    --font-horror: 'Creepster', cursive;
   }
 }
 @layer base {
@@ -259,6 +259,12 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-1\/2 {
+    width: calc(1/2 * 100%);
+  }
   .w-12 {
     width: calc(var(--spacing) * 12);
   }
@@ -418,6 +424,9 @@
   .font-cursive {
     font-family: var(--font-cursive);
   }
+  .font-horror {
+    font-family: var(--font-horror);
+  }
   .font-pangolin {
     font-family: var(--font-pangolin);
   }
@@ -441,6 +450,9 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
+  .text-\[3vw\] {
+    font-size: 3vw;
+  }
   .text-\[4\.5vw\] {
     font-size: 4.5vw;
   }
@@ -456,28 +468,15 @@
   .text-\[7vw\] {
     font-size: 7vw;
   }
-  .text-\[8px\] {
-    font-size: 8px;
-  }
-  .text-\[10px\] {
-    font-size: 10px;
-  }
   .text-\[10vw\] {
     font-size: 10vw;
   }
   .text-\[17px\] {
     font-size: 17px;
   }
-  .text-\[18px\] {
-    font-size: 18px;
-  }
   .leading-1 {
     --tw-leading: calc(var(--spacing) * 1);
     line-height: calc(var(--spacing) * 1);
-  }
-  .leading-1\.5 {
-    --tw-leading: calc(var(--spacing) * 1.5);
-    line-height: calc(var(--spacing) * 1.5);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -666,6 +665,12 @@
       line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
+  .md\:text-5xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
   .md\:text-6xl {
     @media (width >= 48rem) {
       font-size: var(--text-6xl);
@@ -681,11 +686,6 @@
   .md\:text-\[1\.3vw\] {
     @media (width >= 48rem) {
       font-size: 1.3vw;
-    }
-  }
-  .md\:text-\[1\.5vw\] {
-    @media (width >= 48rem) {
-      font-size: 1.5vw;
     }
   }
   .md\:text-\[2\.5vw\] {
@@ -734,8 +734,8 @@
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pangolin&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Creepster&family=Pangolin&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

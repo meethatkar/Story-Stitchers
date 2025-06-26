@@ -1,9 +1,9 @@
-function levelBtnEffects(){
-    var easy = document.getElementById("easy");
-    var medium = document.getElementById("medium");
-    var hard = document.getElementById("hard");
+var easy = document.getElementById("easy");
+var medium = document.getElementById("medium");
+var hard = document.getElementById("hard");
+var body = document.querySelector("#levels-section");
 
-    var body = document.querySelector("#levels-section");
+function levelBtnEffects(){
     // console.log(body[0]);
     easy.addEventListener("mouseover", () => {
         body.style.backgroundColor = "#ffc4d5";
@@ -59,20 +59,22 @@ levelBtnEffects();
 // Level logic
 var levelSelected = "";
 easy.addEventListener("click",()=>{
+    sessionStorage.setItem("level", "easy");
     levelSelected = "easy";
 })
 medium.addEventListener("click",()=>{
+    sessionStorage.setItem("level","medium");
     levelSelected = "medium";
 })
 hard.addEventListener("click",()=>{
+    sessionStorage.setItem("level","hard");
     levelSelected = "hard";
 })
 
-function getSelectedLevel(){
-    console.log(levelSelected);
-    
-    return levelSelected;
-}
+// function getSelectedLevel(){
+//     console.log(levelSelected);
+//     return levelSelected;
+// }
 
 
 // start game logic
@@ -94,4 +96,3 @@ startBtn.addEventListener("click", () => {
 });
 
 
-export {getSelectedLevel};
