@@ -6,12 +6,13 @@ let timerMinute = 0;
 let selectionCounter = 0;
 var randomStoryNumber = 0;  
 
+var stories = [];
 
 // getting level and stories
 let level = sessionStorage.getItem("level");
 // console.log(level);
 if (level == "easy") {
-    var easyStories = getEasyStories();
+    stories = getEasyStories();
     timerSecond = 20;
     timerMinute = 1;
 }
@@ -45,7 +46,7 @@ function timer() {
 // RENDER HINT
 function renderHints() {
     let hintParent = document.querySelector("#hint-block");
-    easyStories[getRandomNumber()].hints.forEach((hint) => {
+    stories[getRandomNumber()].hints.forEach((hint) => {
         let hintDiv = document.createElement("span");
         hintDiv.innerText = hint;
         window.innerWidth > 756 ? hintDiv.classList.add("hint-desktop") : hintDiv.classList.add("hint-btn")
@@ -58,35 +59,46 @@ function checkHintClicked(){
     let ParentDiv =document.querySelector("#hint-block");
     let hintDivs = ParentDiv.children;
     let hintCounter = 0;
-    // console.log(hintDivs);
+
     // USED SPREAD OPERATOR BECAUSE HTMLCollection IS NOT AN ARRAY
     // IT LOOKS LIKE ARRAY CAN WE CAN ACCESS ELEMENT USING INDEX, BUT IT NOT INHERIT ALL METHODS OF ARRAY
     // [...hintDivs] converts HTMLCollection to an array.
     [...hintDivs].forEach((hint)=>{
         hint.addEventListener("click",()=>{
-            console.log("clicked:",hint);
-            hint.classList.toggle("hint-clicked");
-            if(/\d/.test(hint.textContent.slice(0,3))){
+            console.log("clicked:",hint.tagName);
+            if(hint.tagName=="SPAN"){
+                if(/\d/.test(hint.textContent.slice(0,3))){
                 // If hint already has a number, remove it
                 // console.log(hint.textContent.slice(3,hint.textContent.length));
-                hint.textContent = hint.textContent.slice(3,hint.textContent.length);
-                
-                hintCounter--;                          
+                hint.textContent = hint.textContent;      
             }
           else{
+            stories[getRandomNumber()].userSelection.push(hint.textContent);            
+            hint.classList.add("hint-clicked");
+            // If hint does not have a number, add it
             hintCounter++;
             hint.textContent = `${hintCounter}. ${hint.textContent}`;
           }  
+            }
         })
+        document.querySelector("#reset-btn").addEventListener("click",()=>{
+            if(/\d/.test(hint.textContent.slice(0,3))){
+                // If hint already has a number, remove it
+                // console.log(hint.textContent.slice(3,hint.textContent.length));
+                hint.tagName=="SPAN"?hint.classList.remove("hint-clicked"):"";
+                hint.textContent = hint.textContent.slice(3,hint.textContent.length);  
+                stories[getRandomNumber()].userSelection = [];
+                hintCounter=0;            
+            }
     })
-    
+    })    
 }
 
 // RENDER SUMMARY
 function renderSummary() {
     let summaryParent = document.querySelector("#summary");
     let summaryDiv = document.createElement("p");
-    summaryDiv.innerText = easyStories[getRandomNumber()].summary;
+    summaryDiv.innerText = stories[getRandomNumber()].summary;
     window.innerWidth > 765 ? summaryDiv.classList.add("summary-text-desktop") : summaryDiv.classList.add("summary-text");
     summaryParent.appendChild(summaryDiv);
 }
@@ -95,7 +107,7 @@ function renderSummary() {
 function renderTitle() {
     let titleParent = document.querySelector("#title");
     let titleDiv = document.createElement("h1");
-    titleDiv.innerText = easyStories[getRandomNumber()].title;
+    titleDiv.innerText = stories[getRandomNumber()].title;
     window.innerWidth > 765 ? titleDiv.classList.add("story-title-desktop") : titleDiv.classList.add("story-title");
     titleParent.appendChild(titleDiv);
 }
@@ -114,8 +126,8 @@ function getRandomNumber() {
 }
 
 window.addEventListener("load", () => {
-    randomStoryNumber = Math.floor(Math.random() * easyStories.length);
-    // console.log(Math.floor(Math.random() * easyStories.length));
+    randomStoryNumber = Math.floor(Math.random() * stories.length);
+    // console.log(Math.floor(Math.random() * stories.length));
     // timer();
     renderTitle();
     renderSummary();

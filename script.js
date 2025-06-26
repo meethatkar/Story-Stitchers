@@ -3,6 +3,10 @@ var medium = document.getElementById("medium");
 var hard = document.getElementById("hard");
 var body = document.querySelector("#levels-section");
 
+// font for mobile
+window.innerWidth < 765 ? document.getElementsByTagName("body")[0].classList.add("mobile-font") : "";
+
+
 function levelBtnEffects(){
     // console.log(body[0]);
     easy.addEventListener("mouseover", () => {
