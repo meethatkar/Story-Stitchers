@@ -25,13 +25,13 @@ body{
     border: 1px solid rgba(67, 154, 204, 0.438);
 }
 .hint-desktop{
-    font-size: 2vw;
+    font-size: 1.7vw;
     color: aliceblue;
     padding: 0.2% 2%;
     background-color: rgba(38, 80, 122, 0.233);
     border-radius: 10px;
     border: 1px solid rgba(67, 154, 204, 0.438);
-
+    cursor: pointer;
 }
 
 .summary-text{
