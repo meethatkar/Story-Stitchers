@@ -42,6 +42,9 @@ else{
     })
 }
 
+// FONT FOR MOBILE
+window.innerWidth < 765 ? document.getElementsByTagName("body")[0].classList.add("mobile-font") : "";
+
 
 function mobileView(){
     wrapper.classList.add("mobile-view");

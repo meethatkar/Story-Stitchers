@@ -11,17 +11,18 @@
       rel="stylesheet"
     />
   </head>
-  <body class="relative font-pangolin font-semibold overflow-x-hidden md:font-cursive ">
+  <body class="relative font-pangolin font-semibold overflow-x-hidden bg-black md:font-cursive ">
+
     <!-- INTRO OR RULES PAGE, APPEAR AT START -->
-     <div id="rules" class="absolute inset-0 h-screen w-screen bg-black z-5 flex flex-col items-center transition-all ease-in-out duration-300 text-white py-5 px-10 gap-10 md:justify-center">
-      <h1 class="text-3xl text-center border-l-2 border-r-2 border-gray-400 md:px-3 md:text-5xl"> Things to note before you Start </h1>
+     <div id="rules" class="absolute inset-0 h-screen w-screen bg-black z-5 flex flex-col items-start transition-all ease-in-out duration-300 text-white py-5 px-10 gap-10 md:justify-center md:items-center">
+      <h1 class="text-3xl mx-auto border-l-2 border-r-2 border-gray-400 md:px-3 md:text-5xl"> Things to note before you Start </h1>
       <div id="rule-1" class="mt-5 flex flex-col items-start px-5 md:w-[45%]">
         <div class="rule-head flex items-center gap-2 text-2xl mb-2">
           <h3 class=""> 1. Timer Challenge: </h3>
           <i class="ri-corner-right-down-line translate-y-2"></i> </h3>
         </div>
         <div class="rule-descp">
-          <p class="text-lg translate-x-10 md:translate-x-16"> Select a word for every blank before the timer runs out! </p>
+          <p class="text-lg translate-x-10 md:translate-x-16"> Select all words before the timer runs out! </p>
         </div>
       </div>
       <div id="rule-2" class="mt-5 flex flex-col items-start px-5 md:w-[45%]">
@@ -42,9 +43,8 @@
           <p class="text-lg translate-x-10 md:translate-x-16">Choose words as you wish; your selections create a unique/crazy story! </p>
         </div>
         </div>
-        <button class="bg-green-400 px-3 py-[1px] text-2xl rounded-lg" id="startGame"> Play </button>
+        <button class="bg-green-400 px-3 py-[1px] text-2xl rounded-lg mx-auto" id="startGame"> Play </button>
      </div>
-
 
     <!-- MAIN STORY PAGE  -->
       <div id="main-story" class="bg-black h-screen w-screen opacity-0 flex flex-col justify-center  transition-all ease-in-out duration-300 items-center md:justify-around">
@@ -78,10 +78,25 @@
         <button class="bg-blue-300/50 px-2 py-[2px] rounded-lg">Reset</button>
       </div>
       <div id="submit-btn" class="absolute bottom-3 right-[20%]  text-white md:text-2xl md:right-[25%]">
-        <button class="bg-green-300/50 px-2 py-[2px] rounded-lg">Reveal Story </button>
+        <button class="bg-green-300/50 px-2 py-[2px] rounded-lg"><a href="./display-story/horror-display.html"> Reveal Story </a> </button>
       </div>
     </div>
     </div>
+
+    <!-- DISCLAIMER ABOUT CRAZY OR BAD STORY, APPEAR AT THE END -->
+    <!-- <div id="story-disclaimer" class="absolute top-0 left-0 flex flex-col items-center z-5 bg-black text-white gap-10 h-screen w-screen py-8 px-5">
+      <h1 class="text-3xl leading-[32px]"> A Note on Your Story! </h1>
+      <h3 class="text-xl"> Remember, the story you're about to read is uniquely yours, shaped entirely by your word selections! It might be: </h3>
+      <ol class="text-lg translate-x-5 px-3 leading-[28px]">
+        <li class="list-disc"> Completely different from the original. </li>
+        <li class="list-disc"> Funny, illogical, crazy, or hilarious! </li>
+        <li class="list-disc"> Unfulfilled, unreasonable, or even improper. </li>
+      </ol>
+      <h3 class="text-xl px-1 leading-[32px]"> <b> Don't worry – that's part of the fun! </b> This game celebrates creativity and unexpected outcomes. Enjoy your one-of-a-kind tale! </h3>
+      <button class="bg-green-400 px-2 py-[2px] rounded-lg text-2xl mx-auto"> <a href="./display-story/horror-display.html">Continue</a> </button> -->
+    </div>
+
+
 <!-- 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="stories.js" type="module"></script>
