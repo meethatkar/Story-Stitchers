@@ -14,15 +14,6 @@ var stories = [];
 var startRulesDiv = document.querySelector("#rules");
 var startGameBtn = document.getElementById("startGame");
 
-startGameBtn.addEventListener("click",()=>{
-    startRulesDiv.style.transform = "translateY(-100%)";
-    window.innerWidth<765 ? startRulesDiv.style.transform = "translateY(-100%)":startRulesDiv.style.transform = "translatex(-100%)";
-    startRulesDiv.style.zIndex = "-1";
-    mainDiv.style.opacity = "1";
-    // timer();            //GAME TIMER STARTED
-})
-
-
 
 // getting level and stories
 let level = sessionStorage.getItem("level");
@@ -88,15 +79,16 @@ function checkHintClicked(){
                 // console.log(hint.textContent.slice(3,hint.textContent.length));
                 hint.textContent = hint.textContent;      
             }
-          else{
-            stories[getRandomNumber()].userSelection.push(hint.textContent);            
-            hint.classList.add("hint-clicked");
-            // If hint does not have a number, add it
-            hintCounter++;
-            hint.textContent = `${hintCounter}. ${hint.textContent}`;
-          }  
-            }
-        })
+            else{
+                stories[getRandomNumber()].userSelection.push(hint.textContent);   
+                sessionStorage.setItem("userSelectionArr",stories[getRandomNumber()].userSelection);       
+                hint.classList.add("hint-clicked");
+                // If hint does not have a number, add it
+                hintCounter++;
+                hint.textContent = `${hintCounter}. ${hint.textContent}`;
+            }  
+        }
+    })
         document.querySelector("#reset-btn").addEventListener("click",()=>{
             if(/\d/.test(hint.textContent.slice(0,3))){
                 // If hint already has a number, remove it
@@ -106,7 +98,7 @@ function checkHintClicked(){
                 stories[getRandomNumber()].userSelection = [];
                 hintCounter=0;            
             }
-    })
+        })
     })    
 }
 
@@ -140,11 +132,20 @@ else{
 randomStoryNumber = 0;
 function getRandomNumber() {
     // console.log("function ", randomStoryNumber);
+    sessionStorage.setItem("randomNumber",randomStoryNumber);
     return randomStoryNumber;
 }
+    startGameBtn.addEventListener("click",()=>{
+        window.innerWidth<765 ? startRulesDiv.style.transform = "translateY(-100%)":startRulesDiv.style.transform = "translatex(-100%)";
+        startRulesDiv.style.zIndex = "-1";
+        mainDiv.style.opacity = "1";
+        // timer();            //GAME TIMER STARTED
+    })
 
 window.addEventListener("load", () => {
     randomStoryNumber = Math.floor(Math.random() * stories.length);
+    console.log("random number: ",randomStoryNumber);
+    
     // console.log(Math.floor(Math.random() * stories.length));
     renderTitle();
     renderSummary();
