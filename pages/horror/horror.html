@@ -11,10 +11,44 @@
       rel="stylesheet"
     />
   </head>
-  <body
-    class="bg-black h-screen w-screen flex flex-col justify-center items-center font-pangolin font-semibold overflow-x-hidden md:font-cursive md:justify-around"
-  >
-    <div
+  <body class="relative font-pangolin font-semibold overflow-x-hidden md:font-cursive ">
+    <!-- INTRO OR RULES PAGE, APPEAR AT START -->
+     <div id="rules" class="absolute inset-0 h-screen w-screen bg-black z-5 flex flex-col items-center transition-all ease-in-out duration-300 text-white py-5 px-10 gap-10 md:justify-center">
+      <h1 class="text-3xl text-center border-l-2 border-r-2 border-gray-400 md:px-3 md:text-5xl"> Things to note before you Start </h1>
+      <div id="rule-1" class="mt-5 flex flex-col items-start px-5 md:w-[45%]">
+        <div class="rule-head flex items-center gap-2 text-2xl mb-2">
+          <h3 class=""> 1. Timer Challenge: </h3>
+          <i class="ri-corner-right-down-line translate-y-2"></i> </h3>
+        </div>
+        <div class="rule-descp">
+          <p class="text-lg translate-x-10 md:translate-x-16"> Select a word for every blank before the timer runs out! </p>
+        </div>
+      </div>
+      <div id="rule-2" class="mt-5 flex flex-col items-start px-5 md:w-[45%]">
+        <div class="rule-head flex items-center gap-2 text-2xl mb-2">
+          <h3 class=""> 2. Story Hints: </h3>
+          <i class="ri-corner-right-down-line translate-y-2"></i> </h3>
+        </div>
+        <div class="rule-descp">
+          <p class="text-lg translate-x-10 md:translate-x-16"> Use the Title and Summary as your guides to the narrative.</p>
+        </div>
+      </div>
+        <div id="rule-3" class="mt-5 flex flex-col items-start px-5 md:w-[45%]">
+        <div class="rule-head flex items-center gap-2 text-2xl mb-2">
+          <h3 class=""> 3. Creative Freedom: </h3>
+          <i class="ri-corner-right-down-line translate-y-2"></i> </h3>
+        </div>
+        <div class="rule-descp">
+          <p class="text-lg translate-x-10 md:translate-x-16">Choose words as you wish; your selections create a unique/crazy story! </p>
+        </div>
+        </div>
+        <button class="bg-green-400 px-3 py-[1px] text-2xl rounded-lg" id="startGame"> Play </button>
+     </div>
+
+
+    <!-- MAIN STORY PAGE  -->
+      <div id="main-story" class="bg-black h-screen w-screen opacity-0 flex flex-col justify-center  transition-all ease-in-out duration-300 items-center md:justify-around">
+            <div
       id="timer"
       class="h-15 w-1/2 my-3 text-center text-white text-shadow-yellow-950 text-shadow-lg md:my-0"
     >
@@ -47,6 +81,9 @@
         <button class="bg-green-300/50 px-2 py-[2px] rounded-lg">Reveal Story </button>
       </div>
     </div>
+    </div>
+<!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="stories.js" type="module"></script>
     <script src="horror.js" type="module"></script>
   </body>

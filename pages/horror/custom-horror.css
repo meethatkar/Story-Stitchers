@@ -1,11 +1,11 @@
-body{
+.mobile-img{
     background-image: url("./horror-mobile.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 0%;
 }
 
-.body-desktop{
+.desktop-img{
     background-image: url("../../category/assets/horror-desktop.avif");
     background-size: cover;
     background-position: center;
