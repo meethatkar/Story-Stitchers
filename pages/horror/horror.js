@@ -3,10 +3,26 @@ import { getEasyStories } from "./stories.js";
 let timerSecond = 0;
 let timerMinute = 0;
 
+
+let mainDiv = document.getElementById("main-story");    
 let selectionCounter = 0;
 var randomStoryNumber = 0;  
 
 var stories = [];
+
+// INTRO OR RULES PAGE, APPEAR AT START
+var startRulesDiv = document.querySelector("#rules");
+var startGameBtn = document.getElementById("startGame");
+
+startGameBtn.addEventListener("click",()=>{
+    startRulesDiv.style.transform = "translateY(-100%)";
+    window.innerWidth<765 ? startRulesDiv.style.transform = "translateY(-100%)":startRulesDiv.style.transform = "translatex(-100%)";
+    startRulesDiv.style.zIndex = "-1";
+    mainDiv.style.opacity = "1";
+    // timer();            //GAME TIMER STARTED
+})
+
+
 
 // getting level and stories
 let level = sessionStorage.getItem("level");
@@ -114,8 +130,10 @@ function renderTitle() {
 
 
 if (window.innerWidth > 765) {
-    let body = document.getElementsByTagName("body");
-    body[0].classList.add("body-desktop");
+    mainDiv.classList.add("desktop-img");
+}
+else{
+    mainDiv.classList.add("mobile-img");
 }
 
 //GET RANDOWM NUMBER
@@ -128,7 +146,6 @@ function getRandomNumber() {
 window.addEventListener("load", () => {
     randomStoryNumber = Math.floor(Math.random() * stories.length);
     // console.log(Math.floor(Math.random() * stories.length));
-    // timer();
     renderTitle();
     renderSummary();
     renderHints();
