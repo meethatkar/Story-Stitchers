@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Creepster&family=Lora:ital,wght@0,400..700;1,400..700&family=Pangolin&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+
 .font-mobile{
     font-family: "Pangolin";
 }
@@ -24,7 +31,7 @@
 
 /* STORY */
 .mobile-story{
-    width: 90vw;
+    width: 85vw;
     text-align: center;
     color: rgb(255, 223, 180);
     background-color: rgba(71, 61, 139, 0.47);
@@ -34,7 +41,7 @@
     backdrop-filter: blur(3px);
 }
 .desktop-story{
-     width: 90vw;
+     width: 80vw;
     text-align: center;
     color: rgb(255, 223, 180);
     background-color: rgba(71, 61, 139, 0.151);
@@ -47,7 +54,7 @@
 
 /* USER SELECTED WORDS */
 .hint-mobile{
-    font-size: 3vw;
+    font-size: 4vw;
     color: aliceblue;
     padding: 2% 5%;
     background-color: rgba(38, 80, 122, 0.233);
@@ -67,7 +74,7 @@
 .mobile-img{
     background-image: url("../horror-mobile.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 130%;
     background-position: center 0%;
 }
 
