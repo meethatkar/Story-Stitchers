@@ -58,7 +58,7 @@ function renderUserGeneratedStory(){
     
 
     // user selected words
-    sortArray();
+    // sortArray();
     let wordCount = 1;              //created for prepending number ins user Selected words
     hints.forEach((hint)=>{
         let wordSpanDiv = document.createElement("span");
@@ -116,52 +116,49 @@ function highlightWords(){
 
 // REVEAL USER"S STORY WARNING SLIDE
 window.addEventListener("load",()=>{
-    window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("top-[100%]"):document.querySelector("#story-disclaimer").classList.add("translate-x-[100%]");
+    window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("slide-mobile"):document.querySelector("#story-disclaimer").classList.add("slide-desktop");
 })
 
 document.querySelector("#revealMyStry").addEventListener("click",()=>{
-    // bg-img remove and add black clr
+    // bg-img remove and add black clr [deone cause bg-img was visible at  bottom
     window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.remove("mobile-img"):document.getElementsByTagName("body")[0].classList.remove("desktop-img");
     document.getElementsByTagName("body")[0].classList.add("bg-black");
     // document.getElementsByTagName("body")[0].classList.add("overflow-clip");
     // story section
     document.querySelector("#ogStory").style.opacity = "0";
     document.querySelector("#ogStory").style.zIndex = "0";
-    // document.querySelector("#ogStory").style.display = "hidden";
-    document.querySelector("#story-disclaimer").style.opacity = "1";
-    document.querySelector("#story-disclaimer").style.height = "100vh";
-    document.querySelector("#story-disclaimer").style.display = "flex";
+    // DISPLAY HIDDEN --> FLEX (MOBILE ONLY)
+    window.innerWidth<765 ? document.querySelector("#story-disclaimer").style.display = "flex":"";
+    requestAnimationFrame(()=>{
     //REMOVE
-    window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.remove("top-[100%]"):document.querySelector("#story-disclaimer").classList.remove("translate-x-[100%]");
+        window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.remove("slide-mobile"):document.querySelector("#story-disclaimer").classList.remove("slide-desktop");
     // ADD
-    window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("top-[0%]"):document.querySelector("#story-disclaimer").classList.add("translate-x-[0%]");
-    console.log(document.querySelector("#story-disclaimer"));
+        window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("slide-mobile-reveal"):document.querySelector("#story-disclaimer").classList.add("slide-desktop-reveal");
+    })
     
 })
 
 // USER STORY REVEAL SILDE
 window.addEventListener("load",function(){
-    document.querySelector("#userStory").classList.add("top-[100%]");
+    this.window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[100%]"):document.querySelector("#userStory").classList.add("-right-[100%]");
     document.querySelector("#userStory").classList.add("z-0");
-    document.querySelector("#userStory").classList.add("opacity-0");
-    document.querySelector("#userStory").classList.add("hidden");
 
 })
 document.querySelector("#warningContinue").addEventListener(("click"),()=>{
-    console.log("clieck");
+    window.innerWidth<765 ? document.querySelector("#userStory").style.display = "flex":""; 
+    window.innerWidth<765 ? document.querySelector("#story-disclaimer").style.display = "none":""; 
+    requestAnimationFrame(()=>{
     // REMOVE
-    document.querySelector("#userStory").classList.remove("top-[100%]");
-    document.querySelector("#userStory").classList.remove("z-0");
-    document.querySelector("#userStory").classList.remove("opacity-0");
-    document.querySelector("#userStory").classList.remove("hidden");
+        window.innerWidth<765 ? document.querySelector("#userStory").classList.remove("top-[100%]"):document.querySelector("#userStory").classList.remove("-right-[100%]");
+        document.querySelector("#userStory").classList.remove("z-0");
     // ADD
-    document.querySelector("#userStory").classList.add("top-[0%]");
-    document.querySelector("#userStory").classList.add("z-10");
-    document.querySelector("#userStory").classList.add("opacity-100");
-    document.querySelector("#userStory").classList.add("flex");
-    document.querySelector("#userStory").classList.add("bg-black");
-    document.querySelector("#story-disclaimer").style.display = "hidden";    
-    
+        window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[0%]"):document.querySelector("#userStory").classList.add("right-[0%]");
+        document.querySelector("#userStory").classList.add("z-10");
+        window.innerWidth<765 ? document.querySelector("#story-disclaimer").style.top = "100%":document.querySelector("#story-disclaimer").style.right = "-100%";
+    }) 
+    // bg-img remove and add black clr [deone cause bg-img was visible at  bottom
+    window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.add("mobile-img"):document.getElementsByTagName("body")[0].classList.add("desktop-img");
+    document.getElementsByTagName("body")[0].classList.remove("bg-black");
 })
 highlightWords();
 // console.log("new",story);
