@@ -5,7 +5,7 @@
 
 /* HORRROR VIEW */
 .mobile-view{
-    background-image: url(../assets/category-main-mobile.jpg);
+    background-image: url(../assets/category-main-mobile.avif);
     background-size: cover;
     background-position: center;
     color: #2d003f;
@@ -70,7 +70,7 @@
 
 /* adventure */
 .adventure{
-    background-image: url(../assets/adventure-desktop.jpg);
+    background-image: url(../assets/adventure-desktop.avif);
     background-position: center 100%;
     background-size: cover;
     color: rgba(255, 255, 255, 0.690)
@@ -84,7 +84,7 @@
 
 /* romance */
 .romance{
-    background-image: url(../assets/romance-desktop.jpeg);
+    background-image: url(../assets/romance-desktop.avif);
     background-size: cover;
     background-position: center;
     color: rgba(255, 255, 255, 0.795);
@@ -99,7 +99,7 @@
 
 /* comedy */
 .comedy{
-    background-image: url(../assets/comedy.jpg);
+    background-image: url(../assets/comedy.avif);
     background-position: center;
     background-size: cover;
 }
@@ -111,7 +111,7 @@
 
 /* sci-fi */
 .sci-fi{
-    background-image: url(../assets/sci-fi-desktop.jpg);
+    background-image: url(../assets/sci-fi-desktop.avif);
     background-size: cover;
     background-position: center;
     color: #91bdec;
