@@ -237,6 +237,7 @@ startGameBtn.addEventListener("click", () => {
     timer();            //GAME TIMER STARTED
 })
 
+
 window.addEventListener("load", () => {
     randomStoryNumber = Math.floor(Math.random() * stories.length);
     console.log("random number: ", randomStoryNumber);
