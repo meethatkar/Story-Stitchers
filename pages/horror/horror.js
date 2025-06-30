@@ -39,13 +39,13 @@ let interval = null;
 // AUDIO PART OPEN
 let tickSound = new Audio('../../category/assets/tick-tick.wav');
 tickSound.preload = 'auto';         //tells the browser to preload the sound so it's ready to play instantly with no delay.
-tickSound.volume = 0.5;
+tickSound.volume = 0.3;
 let last_10_sec_sound = new Audio('../../category/assets/last-10-sec-sound.wav');
 last_10_sec_sound.preload = 'auto';
-last_10_sec_sound.volume = 0.7;
+last_10_sec_sound.volume = 0.5;
 let timeUpSound = new Audio('../../category/assets/time-up-sound.wav');
 timeUpSound.preload = 'auto';
-timeUpSound.volume = 0.5;
+timeUpSound.volume = 0.3;
 // AUDIO PART CLOSE
 
 function timer() {
@@ -102,6 +102,9 @@ function checkHintSelection() {
 }
 document.querySelector("#submit-btn button").addEventListener("click", (event) => {
     if (checkHintSelection()) {
+        tickSound.pause();
+        last_10_sec_sound.pause();
+        timeUpSound.pause();
         clearInterval(interval);
         setTimeout(() => {
             window.location.href = "./display-story/horror-display.html";
