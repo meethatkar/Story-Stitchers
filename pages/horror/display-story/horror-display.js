@@ -113,10 +113,8 @@ function highlightWords(){
     })
 }
 
-// REVEAL USER"S STORY WARNING SLIDE
-window.addEventListener("load",()=>{
-    window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("slide-mobile"):document.querySelector("#story-disclaimer").classList.add("slide-desktop");
-})
+// window.addEventListener("load",()=>{
+// })
 
 document.querySelector("#revealMyStry").addEventListener("click",()=>{
     // bg-img remove and add black clr [deone cause bg-img was visible at  bottom
@@ -129,18 +127,27 @@ document.querySelector("#revealMyStry").addEventListener("click",()=>{
     // DISPLAY HIDDEN --> FLEX (MOBILE ONLY)
     document.querySelector("#story-disclaimer").style.display = "flex";
     requestAnimationFrame(()=>{
-    //REMOVE
+        //REMOVE
         window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.remove("slide-mobile"):document.querySelector("#story-disclaimer").classList.remove("slide-desktop");
-    // ADD
+        // ADD
         window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("slide-mobile-reveal"):document.querySelector("#story-disclaimer").classList.add("slide-desktop-reveal");
     })
     
 })
 
-// USER STORY REVEAL SILDE
 window.addEventListener("load",function(){
+    // USER STORY REVEAL SILDE
     this.window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[100%]"):document.querySelector("#userStory").classList.add("-right-[100%]");
     document.querySelector("#userStory").classList.add("z-0");
+    
+    
+    // REVEAL USER"S STORY WARNING SLIDE
+    window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("slide-mobile"):document.querySelector("#story-disclaimer").classList.add("slide-desktop");
+
+
+    // AUDIO
+    horrorBgm.currentTime = 0;
+    horrorBgm.play();
 
 })
 document.querySelector("#warningContinue").addEventListener(("click"),()=>{
@@ -176,33 +183,16 @@ horrorBgm.addEventListener('ended',()=>{
     horrorBgm.currentTime = 0;
     horrorBgm.play();
 })
+horrorBgm.preload = 'auto';
+horrorBgm.volume = 0.2;
 
 // audio adding [horror bgm]
-window.addEventListener("load",()=>{
-    horrorBgm.preload = 'auto';
-    horrorBgm.volume = 0.2;
-    horrorBgm.currentTime = 0;
-    horrorBgm.play();
-})
+// window.addEventListener("load",()=>{
+
+// })
 document.querySelector("#replay").addEventListener(("click"),()=>{
     horrorBgm.pause();
 })
-
-// TRYING TO SOLVE WEBSOCKET ISSUSE
-const socket = new WebSocket('ws://127.0.0.1:5500/pages/horror/display-story/horror-display.html');
-
-socket.onopen = function () {
-    socket.send("some mesg"); // ✅ Safe to send here
-};
-
-socket.onerror = function (e) {
-    console.error("WebSocket error:", e);
-};
-
-
-// const socket = {
-//     send: function (){}
-// }
 
 renderStory();
 renderUserGeneratedStory();
