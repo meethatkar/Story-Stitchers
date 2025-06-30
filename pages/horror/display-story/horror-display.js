@@ -184,6 +184,25 @@ window.addEventListener("load",()=>{
     horrorBgm.currentTime = 0;
     horrorBgm.play();
 })
+document.querySelector("#replay").addEventListener(("click"),()=>{
+    horrorBgm.pause();
+})
+
+// TRYING TO SOLVE WEBSOCKET ISSUSE
+const socket = new WebSocket('ws://127.0.0.1:5500/pages/horror/display-story/horror-display.html');
+
+socket.onopen = function () {
+    socket.send("some mesg"); // ✅ Safe to send here
+};
+
+socket.onerror = function (e) {
+    console.error("WebSocket error:", e);
+};
+
+
+// const socket = {
+//     send: function (){}
+// }
 
 renderStory();
 renderUserGeneratedStory();
