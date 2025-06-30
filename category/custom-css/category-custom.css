@@ -38,23 +38,6 @@
     backdrop-filter: blur(3px);
 }
 
-/* comedy 
-.comedy-mob{
-    background-size: cover;
-    background-position: center;
-} */
-
-/*  thriller */
-/* .thriller-mob{
-    background-image: url(/category/assets/thriller-mob.avif);
-    background-size: cover;
-    background-position: 0% 50%;
-    color: #a1a1a1;
-}
-.thriller-btn-mob{
-    background-color: rgba(124, 243, 243, 0.26);
-    color: #0A1C2C ;
-} */
 .thriller-desk{
     background-image: url(../assets/thriller-desktop.avif);
     background-size: cover;
