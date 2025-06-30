@@ -116,6 +116,7 @@ function highlightWords(){
 
 // REVEAL USER"S STORY WARNING SLIDE
 window.addEventListener("load",()=>{
+    debugger;           //DEB
     window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("slide-mobile"):document.querySelector("#story-disclaimer").classList.add("slide-desktop");
 })
 
@@ -128,7 +129,7 @@ document.querySelector("#revealMyStry").addEventListener("click",()=>{
     document.querySelector("#ogStory").style.opacity = "0";
     document.querySelector("#ogStory").style.zIndex = "0";
     // DISPLAY HIDDEN --> FLEX (MOBILE ONLY)
-    window.innerWidth<765 ? document.querySelector("#story-disclaimer").style.display = "flex":"";
+    document.querySelector("#story-disclaimer").style.display = "flex";
     requestAnimationFrame(()=>{
     //REMOVE
         window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.remove("slide-mobile"):document.querySelector("#story-disclaimer").classList.remove("slide-desktop");
@@ -140,13 +141,14 @@ document.querySelector("#revealMyStry").addEventListener("click",()=>{
 
 // USER STORY REVEAL SILDE
 window.addEventListener("load",function(){
+    debugger;           //DEB
     this.window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[100%]"):document.querySelector("#userStory").classList.add("-right-[100%]");
     document.querySelector("#userStory").classList.add("z-0");
 
 })
 document.querySelector("#warningContinue").addEventListener(("click"),()=>{
-    window.innerWidth<765 ? document.querySelector("#userStory").style.display = "flex":""; 
-    window.innerWidth<765 ? document.querySelector("#story-disclaimer").style.display = "none":""; 
+    document.querySelector("#userStory").style.display = "flex"; 
+    document.querySelector("#story-disclaimer").style.display = "none"; 
     requestAnimationFrame(()=>{
     // REMOVE
         window.innerWidth<765 ? document.querySelector("#userStory").classList.remove("top-[100%]"):document.querySelector("#userStory").classList.remove("-right-[100%]");
