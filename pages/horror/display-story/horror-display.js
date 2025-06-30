@@ -11,7 +11,6 @@ let summary = storyObj.summary;
 let hints = storyObj.hints;
 let userSelection = sessionStorage.getItem("userSelectionArr").split(",");              //SPLIT KARNE SE JAB ',' (COMMOM) AAYEGA STRING MAI VHO CUT HOKE EK ARRAY ELEMENT BAN JAYEGA.
 let story = storyObj.story;
-console.log(storyObj);
 
 
 function renderStory(){
@@ -116,7 +115,6 @@ function highlightWords(){
 
 // REVEAL USER"S STORY WARNING SLIDE
 window.addEventListener("load",()=>{
-    debugger;           //DEB
     window.innerWidth<765 ? document.querySelector("#story-disclaimer").classList.add("slide-mobile"):document.querySelector("#story-disclaimer").classList.add("slide-desktop");
 })
 
@@ -141,7 +139,6 @@ document.querySelector("#revealMyStry").addEventListener("click",()=>{
 
 // USER STORY REVEAL SILDE
 window.addEventListener("load",function(){
-    debugger;           //DEB
     this.window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[100%]"):document.querySelector("#userStory").classList.add("-right-[100%]");
     document.querySelector("#userStory").classList.add("z-0");
 
@@ -173,6 +170,20 @@ window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.add("
 
 // RESPONSIVE BACKGROUND IMAGE
 window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.add("mobile-img"):document.getElementsByTagName("body")[0].classList.add("desktop-img");
+
+var horrorBgm = new Audio('./horror_bgm.wav');
+horrorBgm.addEventListener('ended',()=>{
+    horrorBgm.currentTime = 0;
+    horrorBgm.play();
+})
+
+// audio adding [horror bgm]
+window.addEventListener("load",()=>{
+    horrorBgm.preload = 'auto';
+    horrorBgm.volume = 0.2;
+    horrorBgm.currentTime = 0;
+    horrorBgm.play();
+})
 
 renderStory();
 renderUserGeneratedStory();
