@@ -102,3 +102,14 @@ startBtn.addEventListener("click", () => {
 });
 
 
+// LOADER LOGIC
+var loader = document.querySelector("#main-loader");
+window.addEventListener("load",()=>{
+    setTimeout(()=>{
+        loader.style.opacity = "0";
+        loader.style.zIndex = "-1";
+        document.querySelector("#home-section").style.opacity = "1";
+        document.querySelector("#home-section").style.zIndex = "2";
+    },5500)
+})
+
