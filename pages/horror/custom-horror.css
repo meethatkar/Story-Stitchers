@@ -64,16 +64,21 @@
 }
 
 .story-title{
-    font-size: 8vw;
+    font-size: 7vw;
     margin-bottom: 12px;
+    text-align: center;
+    line-height: 7vw;
+    margin-bottom: 1%;
     color: rgb(138, 3, 3);
     font-weight: 900;
     text-shadow: 2px 3px 5px saddlebrown;
 }
 .story-title-desktop{
-    font-size: 7vw;
+    font-size: 5vw;
     color: rgb(138, 3, 3);
+    text-align: center;
+    line-height: 5vw;
     font-weight: 900;
     text-shadow: 2px 3px 5px saddlebrown;
-    margin: -1% 0%;
+    margin: 1% 0%;
 }

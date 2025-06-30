@@ -1,4 +1,4 @@
-import { getEasyStories } from "./stories.js";
+import { getEasyStories,getMediumStories } from "./stories.js";
 
 let timerSecond = 0;
 let timerMinute = 0;
@@ -24,6 +24,7 @@ if (level == "easy") {
     timerMinute = 1;
 }
 else if (level == "medium") {
+    stories = getMediumStories();
     timerSecond = 40;
     timerMinute = 1;
 }
@@ -35,6 +36,18 @@ else if (level == "hard") {
 
 // TIMER
 let interval = null;
+// AUDIO PART OPEN
+let tickSound = new Audio('../../category/assets/tick-tick.wav');
+tickSound.preload = 'auto';         //tells the browser to preload the sound so it's ready to play instantly with no delay.
+tickSound.volume = 0.5;
+let last_10_sec_sound = new Audio('../../category/assets/last-10-sec-sound.wav');
+last_10_sec_sound.preload = 'auto';
+last_10_sec_sound.volume = 0.7;
+let timeUpSound = new Audio('../../category/assets/time-up-sound.wav');
+timeUpSound.preload = 'auto';
+timeUpSound.volume = 0.5;
+// AUDIO PART CLOSE
+
 function timer() {
     let timerDiv = document.querySelector("#timer p");
     let totalSeconds = timerMinute * 60 + timerSecond;
@@ -42,7 +55,23 @@ function timer() {
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = totalSeconds % 60;
         timerDiv.innerText = `Timer-${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        if (totalSeconds <= 0) {
+        if(totalSeconds>10){            
+            tickSound.currentTime = 0;
+            tickSound.play();
+        }
+        else if(totalSeconds<=10 && totalSeconds>0){
+            last_10_sec_sound.currentTime = 0;
+            last_10_sec_sound.play();
+            if(totalSeconds%2==0){
+                timerDiv.style.color = "red"
+            }
+            else{
+                timerDiv.style.color = "white"
+            }
+        }
+        else if (totalSeconds <= 0) {
+            timeUpSound.currentTime = 0;
+            timeUpSound.play();
             if(checkHintSelection()){
                 showRedirectionBtn();
             }

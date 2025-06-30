@@ -67,9 +67,9 @@ easy.addEventListener("click",()=>{
     levelSelected = "easy";
 })
 medium.addEventListener("click",()=>{
-    // sessionStorage.setItem("level","medium");
-    // levelSelected = "medium";
-    alert("Coming sooonnn....")
+    sessionStorage.setItem("level","medium");
+    levelSelected = "medium";
+    // alert("Coming sooonnn....")
 })
 hard.addEventListener("click",()=>{
     // sessionStorage.setItem("level","hard");
