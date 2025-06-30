@@ -21,7 +21,7 @@ let level = sessionStorage.getItem("level");
 if (level == "easy") {
     stories = getEasyStories();
     timerSecond = 20;
-    timerMinute = 0;
+    timerMinute = 1;
 }
 else if (level == "medium") {
     timerSecond = 40;
@@ -34,10 +34,11 @@ else if (level == "hard") {
 
 
 // TIMER
+let interval = null;
 function timer() {
     let timerDiv = document.querySelector("#timer p");
     let totalSeconds = timerMinute * 60 + timerSecond;
-    let interval = setInterval(() => {
+    interval = setInterval(() => {
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = totalSeconds % 60;
         timerDiv.innerText = `Timer-${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
@@ -70,9 +71,12 @@ function checkHintSelection() {
         return false;
     }
 }
-document.querySelector("#submit-btn").addEventListener("click", (event) => {
+document.querySelector("#submit-btn button").addEventListener("click", (event) => {
     if (checkHintSelection()) {
-        window.location.href = "./display-story/horror-display.html";
+        clearInterval(interval);
+        setTimeout(() => {
+            window.location.href = "./display-story/horror-display.html";
+        }, 500);    
     }
     else {
         event.preventDefault();
@@ -96,7 +100,7 @@ function showRedirectionBtn(){
     document.querySelector("#main-story").style.zIndex = "-1";
     document.getElementById("redirection").style.opacity = "1";
     document.getElementById("redirection").style.scale = "1";
-    document.getElementById("redirection").style.scale = "10";
+    document.getElementById("redirection").style.zIndex = "10";
 }
 
 // CLICKED ON RETRY AFTER SUBMITTING INCOMPLETED OUTPUT.

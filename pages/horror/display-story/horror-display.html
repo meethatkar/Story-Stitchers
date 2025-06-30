@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="custom-horror-display.css">
     <link rel="stylesheet" href="horror-display-tailwind.css">
 </head>
-<body class="relative w-[100vw] h-screen overflow-x-hidden">
+<body class="relative w-[100vw] min-h-screen overflow-x-hidden">
     <div id="display-horror-wrapper">
       <!-- original story -->
-    <div id="ogStory" class="absolute h-screen w-screen pt-5 text-white flex flex-col items-center gap-5 opacity-100 z-5 transition-all ease-in-out duration-300">
+    <div id="ogStory" class="absolute min-h-screen w-screen pt-5 text-white flex flex-col items-center gap-5 opacity-100 z-5 transition-all ease-in-out duration-300">
         <!-- TITLE -->
         <h1> </h1>
         <!-- STORY -->
@@ -25,7 +25,7 @@
     </div>
 
     <!-- DISCLAIMER ABOUT CRAZY OR BAD STORY, APPEAR AT THE END -->
-    <div id="story-disclaimer" class="absolute hidden md:flex flex-col items-center z-5 bg-black text-white gap-7 w-screen py-8 px-5">
+    <div id="story-disclaimer" class="absolute hidden flex-col items-center z-5 bg-black text-white gap-7 md:h-screen w-screen py-8 px-5">
       <h1 class="text-5xl  text-center leading-[72px] md:text-[5vw] md:leading-[5.5vw] md:top-0"> A Note on Your Story! </h1>
       <h3 class="text-2xl md:w-7/12 md:text-center md:leading-[38px]"> Remember, the story you're about to read is uniquely yours, shaped entirely by your word selections! It might be: </h3>
       <ol class="translate-x-5 px-3 text-xl leading-[305x]">
@@ -38,11 +38,11 @@
     </div>
 
     <!-- USER GENERATE STORY PAGE  -->
-     <div id="userStory" class="absolute hidden md:flex min-h-screen w-screen px-10 pt-5 text-white  flex-col items-center gap-5 transition-all ease-in-out duration-300">
+     <div id="userStory" class="absolute hidden  min-h-screen w-screen px-10 pt-5 text-white  flex-col items-center gap-5 transition-all ease-in-out duration-300">
         <!-- TITLE -->
-        <h1> </h1>
+        <h1 class="text-center"> </h1>
         <!-- STORY -->
-         <span class="text-xl -mb-5 text-violet-500 font-semibold text-shadow-2xs text-shadow-blue-800 md:text-2xl">USER GENERATED STORY</span>
+         <span class="text-xl -mb-5 text-violet-500 font-semibold text-shadow-2xs text-shadow-blue-800 md:text-2xl">Your Choice based story.</span>
         <p>  </p>
         <!-- SELECTED WORDS -->
          <span class="-mb-5 text-blue-300 md:text-2xl"> ORIGINAL WORD'S SEQUENCE </span>

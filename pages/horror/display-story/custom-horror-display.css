@@ -22,7 +22,7 @@
     text-shadow: 2px 3px 5px saddlebrown;
 }
 .desktop-title{
-    font-size: 7vw;
+    font-size: 6.5vw;
     color: rgb(138, 3, 3);
     font-weight: 900;
     text-shadow: 2px 3px 5px saddlebrown;
@@ -74,13 +74,14 @@
 .mobile-img{
     background-image: url("../horror-mobile.avif");
     background-repeat: no-repeat;
-    background-size: 100% 130%;
+    background-size: 100% 170%;
     background-position: center 0%;
 }
 
 .desktop-img{
     background-image: url("../../../category/assets/horror-desktop.avif");
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 250%;
     background-position: center;
 }
 
