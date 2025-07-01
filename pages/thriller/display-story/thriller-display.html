@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Horror Orignal Story </title>
+    <link rel="stylesheet" href="custom-thriller-display.css">
+    <link rel="stylesheet" href="thriller-display-tailwind.css">
+</head>
+<body class="relative w-[100vw] min-h-screen overflow-x-hidden">
+    <div id="display-horror-wrapper">
+      <!-- original story -->
+    <div id="ogStory" class="absolute min-h-screen w-screen pt-5 text-white flex flex-col items-center gap-5 opacity-100 z-5 transition-all ease-in-out duration-300">
+        <!-- TITLE -->
+        <h1> </h1>
+        <!-- STORY -->
+         <span class="text-xl -mb-5 text-violet-500 font-semibold text-shadow-2xs text-shadow-blue-800 md:text-2xl">ORIGNAL STORY</span>
+        <p>  </p>
+        <!-- YOUR SELECTED WORDS -->
+         <span class="-mb-5 text-blue-300 md:text-2xl"> YOUR SELECTED WORD'S SEQUENCE </span>
+        <div id="user-selection" class="flex flex-wrap gap-3 w-[80vw] bg-blue-800/30 py-5 px-3 rounded-lg backdrop-blur-[2px] justify-center">
+            
+        </div>
+        <button class="bg-green-400 px-4 py-[2px] rounded-lg text-2xl mb-5" id="revealMyStry"> Reveal My Tale! </button>
+    </div>
+
+    <!-- DISCLAIMER ABOUT CRAZY OR BAD STORY, APPEAR AT THE END -->
+    <div id="story-disclaimer" class="absolute hidden flex-col items-center z-5 bg-black text-white gap-7 md:h-screen w-screen py-8 px-5">
+      <h1 class="text-5xl  text-center leading-[72px] md:text-[5vw] md:leading-[5.5vw] md:top-0"> A Note on Your Story! </h1>
+      <h3 class="text-2xl md:w-7/12 md:text-center md:leading-[38px]"> Remember, the story you're about to read is uniquely yours, shaped entirely by your word selections! It might be: </h3>
+      <ol class="translate-x-5 px-3 text-xl leading-[305x]">
+        <li class="list-disc"> Completely different from the original. </li>
+        <li class="list-disc"> Funny, illogical, crazy, or hilarious! </li>
+        <li class="list-disc"> Unfulfilled, unreasonable, or even improper. </li>
+      </ol>
+      <h3 class="px-1  text-2xl md:w-7/12 md:text-center leading-[38px]"> <b> Don't worry – that's part of the fun! </b> This game celebrates creativity and unexpected outcomes. Enjoy your one-of-a-kind tale! </h3>
+      <button class="bg-green-400 px-2 py-[2px] rounded-lg text-2xl mx-auto md:text-3xl" id="warningContinue">Continue</button>
+    </div>
+
+    <!-- USER GENERATE STORY PAGE  -->
+     <div id="userStory" class="absolute hidden  min-h-screen w-screen px-10 pt-5 text-white  flex-col items-center gap-5 transition-all ease-in-out duration-300">
+        <!-- TITLE -->
+        <h1 class="text-center"> </h1>
+        <!-- STORY -->
+         <span class="text-xl -mb-5 text-violet-500 font-semibold text-shadow-2xs text-shadow-blue-800 md:text-2xl">Your Choice based story.</span>
+        <p>  </p>
+        <!-- SELECTED WORDS -->
+         <span class="-mb-5 text-blue-300 md:text-2xl"> ORIGINAL WORD'S SEQUENCE </span>
+        <div id="original-hint" class="flex flex-wrap gap-3 w-[90vw] bg-blue-800/30 py-5 px-3 rounded-lg backdrop-blur-[2px] justify-center">
+            
+        </div>
+        <button class="bg-green-400 px-4 py-[2px] rounded-lg text-2xl mb-5"> <a href="../../../index.html" id="replay"> Play Another! </a> </button>
+    </div>
+
+    </div>
+
+    <script src="thriller-display.js" type="module"></script>
+</body>
+</html>

@@ -18,6 +18,7 @@
     "watch:levels":"tailwindcss -i ./level.css -o ./level-tailwind.css --content ./level.html --watch",
     "watch:category":"tailwindcss -i ./category/categories.css -o ./category/categories-tailwind.css --content ./category/categories.html --watch",
     "watch:horror-story": "tailwindcss -i ./pages/horror/display-story/horror-display.css -o ./pages/horror/display-story/horror-display-tailwind.css --content ./pages/horror/display-story/horror-display.html --watch",
-    "watch:all": "concurrently \"npm run watch:home\" \"npm run watch:horror\" \"npm run watch:comedy\" \"npm run watch:romance\" \"npm run watch:adventure\" \"npm run watch:scifi\" \"npm run watch:thriller\" \"npm run watch:magic\" \"npm run watch:thriller\" \"npm run watch:levels\""
+    "watch:thriller-story": "tailwindcss -i ./pages/thriller/display-story/thriller-display.css -o ./pages/thriller/display-story/thriller-display-tailwind.css --content ./pages/thriller/display-story/thriller-display.html --watch",
+    "watch:all": "concurrently \"npm run watch:home\" \"npm run watch:horror\" \"npm run watch:comedy\" \"npm run watch:romance\" \"npm run watch:adventure\" \"npm run watch:scifi\" \"npm run watch:thriller\" \"npm run watch:magic\" \"npm run watch:thriller\" \"npm run watch:levels\" \"npm run watch:horror-story\" \"npm run watch:thriller-story\" "
     }
 }
