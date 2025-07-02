@@ -15,8 +15,13 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-amber-100: oklch(96.2% 0.059 95.617);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-yellow-950: oklch(28.6% 0.066 53.813);
     --color-green-50: oklch(98.2% 0.018 155.826);
     --color-green-300: oklch(87.1% 0.15 154.449);
@@ -232,6 +237,9 @@
   .relative {
     position: relative;
   }
+  .sticky {
+    position: sticky;
+  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -292,6 +300,12 @@
   .mt-\[20px\] {
     margin-top: 20px;
   }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-5 {
+    margin-right: calc(var(--spacing) * 5);
+  }
   .-mb-5 {
     margin-bottom: calc(var(--spacing) * -5);
   }
@@ -312,6 +326,9 @@
   }
   .table {
     display: table;
+  }
+  .table\! {
+    display: table !important;
   }
   .h-15 {
     height: calc(var(--spacing) * 15);
@@ -436,8 +453,14 @@
   .overflow-clip {
     overflow: clip;
   }
+  .overflow-x-clip {
+    overflow-x: clip;
+  }
   .overflow-x-hidden {
     overflow-x: hidden;
+  }
+  .overflow-y-visible {
+    overflow-y: visible;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -533,6 +556,15 @@
       background-color: color-mix(in oklab, var(--color-green-500) 50%, transparent);
     }
   }
+  .bg-yellow-500 {
+    background-color: var(--color-yellow-500);
+  }
+  .bg-yellow-500\/50 {
+    background-color: color-mix(in srgb, oklch(79.5% 0.184 86.047) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-yellow-500) 50%, transparent);
+    }
+  }
   .bg-gradient-to-br {
     --tw-gradient-position: to bottom right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
@@ -544,6 +576,9 @@
   .to-blue-100 {
     --tw-gradient-to: var(--color-blue-100);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .stroke-1 {
+    stroke-width: 1;
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
@@ -662,6 +697,9 @@
   .text-\[8vw\] {
     font-size: 8vw;
   }
+  .text-\[9vw\] {
+    font-size: 9vw;
+  }
   .text-\[10vw\] {
     font-size: 10vw;
   }
@@ -700,8 +738,20 @@
   .text-\[\#cadf9e\] {
     color: #cadf9e;
   }
+  .text-amber-200 {
+    color: var(--color-amber-200);
+  }
   .text-amber-300 {
     color: var(--color-amber-300);
+  }
+  .text-amber-400 {
+    color: var(--color-amber-400);
+  }
+  .text-amber-500 {
+    color: var(--color-amber-500);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
   }
   .text-blue-300 {
     color: var(--color-blue-300);
@@ -1083,6 +1133,11 @@
     @media (width >= 48rem) {
       --tw-leading: 38px;
       line-height: 38px;
+    }
+  }
+  .md\:text-amber-400 {
+    @media (width >= 48rem) {
+      color: var(--color-amber-400);
     }
   }
   .md\:hover\:-translate-y-3 {
