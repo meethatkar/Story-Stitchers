@@ -20,18 +20,20 @@ let level = sessionStorage.getItem("level");
 // console.log(level);
 if (level == "easy") {
     stories = getEasyStories();
-    timerSecond = 20;
+    timerSecond = 40;
     timerMinute = 1;
 }
 else if (level == "medium") {
     stories = getMediumStories();
-    timerSecond = 40;
-    timerMinute = 1;
+    timerSecond = 20;
+    timerMinute = 2;
 }
 else if (level == "hard") {
-    timerSecond = 59;
-    timerMinute = 1;
+    timerSecond = 0;
+    timerMinute = 3;
 }
+// FONT FOR MOBILE
+window.innerWidth < 765 ? document.getElementsByTagName("body")[0].classList.add("mobile-font") : "";
 
 
 // TIMER

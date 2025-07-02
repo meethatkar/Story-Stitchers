@@ -19,6 +19,12 @@
     "watch:category":"tailwindcss -i ./category/categories.css -o ./category/categories-tailwind.css --content ./category/categories.html --watch",
     "watch:horror-story": "tailwindcss -i ./pages/horror/display-story/horror-display.css -o ./pages/horror/display-story/horror-display-tailwind.css --content ./pages/horror/display-story/horror-display.html --watch",
     "watch:thriller-story": "tailwindcss -i ./pages/thriller/display-story/thriller-display.css -o ./pages/thriller/display-story/thriller-display-tailwind.css --content ./pages/thriller/display-story/thriller-display.html --watch",
-    "watch:all": "concurrently \"npm run watch:home\" \"npm run watch:horror\" \"npm run watch:comedy\" \"npm run watch:romance\" \"npm run watch:adventure\" \"npm run watch:scifi\" \"npm run watch:thriller\" \"npm run watch:magic\" \"npm run watch:thriller\" \"npm run watch:levels\" \"npm run watch:horror-story\" \"npm run watch:thriller-story\" "
+    "watch:comedy-story": "tailwindcss -i ./pages/comedy/display-story/comedy-display.css -o ./pages/comedy/display-story/comedy-display-tailwind.css --content ./pages/comedy/display-story/comedy-display.html --watch",
+    "watch:adventure-story": "tailwindcss -i ./pages/adventure/display-story/adventure-display.css -o ./pages/adventure/display-story/adventure-display-tailwind.css --content ./pages/adventure/display-story/adventure-display.html --watch",
+    "watch:magic-story": "tailwindcss -i ./pages/magic/display-story/magic-display.css -o ./pages/magic/display-story/magic-display-tailwind.css --content ./pages/magic/display-story/magic-display.html --watch",
+    "watch:romance-story": "tailwindcss -i ./pages/romance/display-story/romance-display.css -o ./pages/romance/display-story/romance-display-tailwind.css --content ./pages/romance/display-story/romance-display.html --watch",
+    "watch:sciFi-story": "tailwindcss -i ./pages/sci-fi/display-story/sciFi-display.css -o ./pages/sci-fi/display-story/sciFi-display-tailwind.css --content ./pages/sci-fi/display-story/sciFi-display.html --watch",
+
+    "watch:all": "concurrently \"npm run watch:home\" \"npm run watch:horror\" \"npm run watch:comedy\" \"npm run watch:romance\" \"npm run watch:adventure\" \"npm run watch:scifi\" \"npm run watch:thriller\" \"npm run watch:magic\" \"npm run watch:thriller\" \"npm run watch:levels\" \"npm run watch:horror-story\" \"npm run watch:thriller-story\" \"npm run watch:comedy-story\" \"npm run watch:adventure-story\" \"npm run watch:magic-story\" \"npm run watch:romance-story\" \"npm run watch:sciFi-story\""
     }
 }
