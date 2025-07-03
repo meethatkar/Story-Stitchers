@@ -20,9 +20,9 @@
     text-align: center;
     line-height: 7vw;
     margin-bottom: 1%;
-    color: rgb(138, 3, 3);
+    color: #51a0c7;
     font-weight: 900;
-    text-shadow: 2px 3px 5px saddlebrown;
+    text-shadow: 1px 4px 3px #9dddfd5a;
 }
 .desktop-title{
     font-size: 5vw;

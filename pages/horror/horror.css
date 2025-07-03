@@ -6,7 +6,7 @@
 
 @theme{
     /* --font-roboto: 'Roboto', sans-serif; */
-    --font-cursive: "Caveat",cursive;
+    --font-cursive: cursive;
     --font-pangolin: 'Pangolin';
     --font-horror: 'Creepster', cursive;
 }

@@ -103,15 +103,12 @@ function checkHintSelection() {
         return false;
     }
 }
-document.querySelector("#submit-btn button").addEventListener("click", (event) => {
+document.querySelector("#submit-btn a").addEventListener("click", (event) => {
     if (checkHintSelection()) {
         tickSound.pause();
         last_10_sec_sound.pause();
         timeUpSound.pause();
         clearInterval(interval);
-        setTimeout(() => {
-            window.location.href = "./display-story/comedy-display.html";
-        }, 500);    
     }
     else {
         event.preventDefault();
