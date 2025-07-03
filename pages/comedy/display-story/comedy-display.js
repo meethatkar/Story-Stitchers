@@ -40,10 +40,10 @@ function renderStory(){
     })
 }
 
+let titleDiv = document.querySelector("#userStory>h1");
+let storyDiv = document.querySelector("#userStory>p");
+let userSelectionDiv = document.querySelector("#original-hint");
 function renderUserGeneratedStory(){
-    let titleDiv = document.querySelector("#userStory>h1");
-    let storyDiv = document.querySelector("#userStory>p");
-    let userSelectionDiv = document.querySelector("#original-hint");
 
     // title
     titleDiv.textContent = title;
@@ -69,10 +69,16 @@ function renderUserGeneratedStory(){
 }
 
 //HINT WORDS HIGHLIGHING IN OG STORY
-let hintIndexNum = [];          //CREATED TO SORT WORDS BASED ON INDEX NUMBER, FIRST WORDS MUST APPEAR FIRST.  [DONE SO WE CAN HIGHLIGHT HINT WORDS IN OG STORY]
-hints.forEach((hint)=>{
-    hintIndexNum.push(story.indexOf(" "+hint));
-})
+let hintIndexNum = [];
+hints = hints.filter((hint) => {
+  let index = story.indexOf(" " + hint);
+  if (index !== -1) {
+    hintIndexNum.push(index);
+    return true;
+  }
+  return false;
+});
+
 
 
 // sorting hintIndexNum array
@@ -81,7 +87,8 @@ let currNum2 = 0;
 function sortArray(){
     while(true){
         let checkAll = 0;
-        for(let i=0; i<= hints.length; i++){
+        for(let i=0; i<= hints.length-1; i++){
+            let counter = 0;
             if(hintIndexNum[i]>hintIndexNum[i+1]){
                 currNum1 = hintIndexNum[i];
                 hintIndexNum[i] = hintIndexNum[i+1];
@@ -94,7 +101,7 @@ function sortArray(){
                 checkAll++;
             }
         }
-        if(checkAll==8){
+        if(checkAll==hints.length){
             break;
         }
     }
@@ -102,26 +109,28 @@ function sortArray(){
 sortArray();
 
 //HIGHLIGHTING HINT WORDS IN OG STORY
-let highlightStoryArr = [];
-let highlightStory = "";
-function highlightWords(){
-    hints.forEach((hint)=>{
-        // temp.replace(hint,"WORD ENCOUNTERED");
-        // console.log(story.split(" "+hint), hint);
-        story = story.replace(" "+hint,` <u><b>${hint}</b></u>`);
-        // console.log(story);  
-    })
+function highlightWords() {
+  hints.forEach((hint) => {
+    const wordBoundaryRegex = new RegExp(`\\b${hint}\\b(?=[^\\w]|$)`); // Handles punctuation or end of string
+    const match = story.match(wordBoundaryRegex);    
+    if (match) {
+      const index = match.index;
+      story =
+        story.slice(0, index) +
+        `<u><b>${hint}</b></u>` +
+        story.slice(index + hint.length);
+    }
+  });
 }
 
-// window.addEventListener("load",()=>{
-// })
-
 document.querySelector("#revealMyStry").addEventListener("click",()=>{
+    swapWords();
     // bg-img remove and add black clr [deone cause bg-img was visible at  bottom
     window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.remove("mobile-img"):document.getElementsByTagName("body")[0].classList.remove("desktop-img");
     document.getElementsByTagName("body")[0].classList.add("bg-black");
     // document.getElementsByTagName("body")[0].classList.add("overflow-clip");
     // story section
+    storyDiv.innerHTML = story;
     document.querySelector("#ogStory").style.opacity = "0";
     document.querySelector("#ogStory").style.zIndex = "0";
     // DISPLAY HIDDEN --> FLEX (MOBILE ONLY)
@@ -198,13 +207,41 @@ document.querySelector("#replay").addEventListener(("click"),()=>{
     funnyBgm.pause();
 })
 
+// FUNCTION TO SWAP USER SELECTED WORDS WITH OG WORDS
+function swapWords(){
+    console.log(hints);
+    console.log(userSelection);
+    console.log(story);
+    
+    hints.forEach((hint,index)=>{
+        console.log("index: ",index,"word:",hint);
+        
+        story = story.replace("<u><b><u><b><u><b>"+hint+"</b></u></b></u></b></u>","<b><u>"+userSelection[index]+"</u></b>");
+        console.log("og: ",hint,"user",userSelection[index]);
+    })
+}
+
 setTimeout(()=>{
     if(document.readyState != "complete"){
         alert("Error Occured, Close and open again");
     }
 },10000)
 
-renderStory();
-renderUserGeneratedStory();
+window.addEventListener("load", () => {
+  try {
+    if (!sessionStorage.getItem("randomNumber") || !sessionStorage.getItem("level")) {
+      alert("No story found. Restart the game.");
+      window.location.href = "../../index.html";
+      return;
+    }
+
+    renderStory();
+    renderUserGeneratedStory();
+  } catch (err) {
+    alert("Something went wrong: " + err.message);
+  }
+});
+
+
 
 
