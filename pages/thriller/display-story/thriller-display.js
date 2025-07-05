@@ -81,7 +81,7 @@ let currNum2 = 0;
 function sortArray(){
     while(true){
         let checkAll = 0;
-        for(let i=0; i<= hints.length; i++){
+        for(let i=0; i<= hints.length-1; i++){
             if(hintIndexNum[i]>hintIndexNum[i+1]){
                 currNum1 = hintIndexNum[i];
                 hintIndexNum[i] = hintIndexNum[i+1];
@@ -94,7 +94,7 @@ function sortArray(){
                 checkAll++;
             }
         }
-        if(checkAll==hints.length){
+        if(checkAll==hints.length-1){
             break;
         }
     }

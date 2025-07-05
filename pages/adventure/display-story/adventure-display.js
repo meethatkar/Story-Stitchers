@@ -69,16 +69,10 @@ function renderUserGeneratedStory(){
 }
 
 //HINT WORDS HIGHLIGHING IN OG STORY
-let hintIndexNum = [];
-hints = hints.filter((hint) => {
-  let index = story.indexOf(" " + hint);
-  if (index !== -1) {
-    hintIndexNum.push(index);
-    return true;
-  }
-  return false;
-});
-
+let hintIndexNum = [];          //CREATED TO SORT WORDS BASED ON INDEX NUMBER, FIRST WORDS MUST APPEAR FIRST.  [DONE SO WE CAN HIGHLIGHT HINT WORDS IN OG STORY]
+hints.forEach((hint)=>{
+    hintIndexNum.push(story.indexOf(" "+hint));
+})
 
 
 // sorting hintIndexNum array
@@ -87,8 +81,7 @@ let currNum2 = 0;
 function sortArray(){
     while(true){
         let checkAll = 0;
-        for(let i=0; i<= hints.length-1; i++){
-            let counter = 0;
+        for(let i=0; i<= hints.length; i++){
             if(hintIndexNum[i]>hintIndexNum[i+1]){
                 currNum1 = hintIndexNum[i];
                 hintIndexNum[i] = hintIndexNum[i+1];
@@ -109,25 +102,25 @@ function sortArray(){
 sortArray();
 
 //HIGHLIGHTING HINT WORDS IN OG STORY
-function highlightWords() {
-  hints.forEach((hint) => {
-    const wordBoundaryRegex = new RegExp(`\\b${hint}\\b(?=[^\\w]|$)`); // Handles punctuation or end of string
-    const match = story.match(wordBoundaryRegex);    
-    if (match) {
-      const index = match.index;
-      story =
-        story.slice(0, index) +
-        `<u><b>${hint}</b></u>` +
-        story.slice(index + hint.length);
-    }
-  });
+let highlightStoryArr = [];
+let highlightStory = "";
+function highlightWords(){
+    hints.forEach((hint)=>{
+        // temp.replace(hint,"WORD ENCOUNTERED");
+        // console.log(story.split(" "+hint), hint);
+        story = story.replace(" "+hint,` <u><b>${hint}</b></u>`);
+        // console.log(story);  
+    })
 }
+
+// window.addEventListener("load",()=>{
+// })
 
 document.querySelector("#revealMyStry").addEventListener("click",()=>{
     swapWords();
     // bg-img remove and add black clr [deone cause bg-img was visible at  bottom
-    window.innerWidth<765 ? document.getElementById("ogStory").classList.remove("mobile-img"):document.getElementById("ogStory").classList.remove("desktop-img");
-    document.getElementById("ogStory").classList.add("bg-black");
+    window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.remove("mobile-img"):document.getElementsByTagName("body")[0].classList.remove("desktop-img");
+    document.getElementsByTagName("body")[0].classList.add("bg-black");
     // document.getElementsByTagName("body")[0].classList.add("overflow-clip");
     // story section
     storyDiv.innerHTML = story;
@@ -144,7 +137,6 @@ document.querySelector("#revealMyStry").addEventListener("click",()=>{
     
 })
 
-var funnyBgm = new Audio('./adventure-bgm.wav');      //CHANGE
 window.addEventListener("load",function(){
     // USER STORY REVEAL SILDE
     this.window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[100%]"):document.querySelector("#userStory").classList.add("-right-[100%]");
@@ -156,8 +148,8 @@ window.addEventListener("load",function(){
 
 
     // AUDIO
-    funnyBgm.currentTime = 0;
-    funnyBgm.play();
+    thrillerBgm.currentTime = 0;
+    thrillerBgm.play();
 
 })
 document.querySelector("#warningContinue").addEventListener(("click"),()=>{
@@ -179,34 +171,6 @@ document.querySelector("#warningContinue").addEventListener(("click"),()=>{
 highlightWords();
 // console.log("new",story);
 
-
-if(window.innerWidth>765){
-    document.getElementsByTagName("body")[0].classList.add("font-desktop");
-    document.getElementsByTagName("body")[0].classList.add("desktop-img");
-}
-else{
-    // font
-    document.getElementsByTagName("body")[0].classList.add("font-mobile");
-    // image
-    document.getElementsByTagName("body")[0].classList.add("mobile-img");
-    document.querySelector("#userSelectedWordsMsg").classList.add("text-stroke-css");
-}
-
-funnyBgm.addEventListener('ended',()=>{
-    funnyBgm.currentTime = 0;
-    funnyBgm.play();
-})
-funnyBgm.preload = 'auto';
-funnyBgm.volume = 0.2;
-
-// audio adding [horror bgm]
-// window.addEventListener("load",()=>{
-
-// })
-document.querySelector("#replay").addEventListener(("click"),()=>{
-    funnyBgm.pause();
-})
-
 // FUNCTION TO SWAP USER SELECTED WORDS WITH OG WORDS
 function swapWords(){
     console.log(hints);
@@ -221,27 +185,30 @@ function swapWords(){
     })
 }
 
-setTimeout(()=>{
-    if(document.readyState != "complete"){
-        alert("Error Occured, Close and open again");
-    }
-},10000)
 
-window.addEventListener("load", () => {
-  try {
-    if (!sessionStorage.getItem("randomNumber") || !sessionStorage.getItem("level")) {
-      alert("No story found. Restart the game.");
-      window.location.href = "../../index.html";
-      return;
-    }
+// RESPONSIVE FONT 
+window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.add("font-mobile"):document.getElementsByTagName("body")[0].classList.add("font-desktop");
 
-    renderStory();
-    renderUserGeneratedStory();
-  } catch (err) {
-    alert("Something went wrong: " + err.message);
-  }
-});
+// RESPONSIVE BACKGROUND IMAGE
+window.innerWidth<765 ? document.getElementsByTagName("body")[0].classList.add("mobile-img"):document.getElementsByTagName("body")[0].classList.add("desktop-img");
 
+var thrillerBgm = new Audio('./adventure-bgm.wav');
+thrillerBgm.addEventListener('ended',()=>{
+    thrillerBgm.currentTime = 0;
+    thrillerBgm.play();
+})
+thrillerBgm.preload = 'auto';
+thrillerBgm.volume = 0.8;
 
+// audio adding [horror bgm]
+// window.addEventListener("load",()=>{
+
+// })
+document.querySelector("#replay").addEventListener(("click"),()=>{
+    thrillerBgm.pause();
+})
+
+renderStory();
+renderUserGeneratedStory();
 
 

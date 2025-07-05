@@ -78,6 +78,7 @@
     --default-mono-font-family: var(--font-mono);
     --font-cursive: cursive;
     --font-pangolin: 'Pangolin';
+    --font-horror: 'Creepster', cursive;
   }
 }
 @layer base {
