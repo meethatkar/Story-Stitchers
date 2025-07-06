@@ -240,6 +240,11 @@ startGameBtn.addEventListener("click", () => {
     timer();            //GAME TIMER STARTED
 })
 
+// LOADER
+function loader(){
+    document.querySelector("#mini-loader").style.opacity = "0";
+    document.querySelector("#mini-loader").style.zIndex = "-1";
+}
 
 window.addEventListener("load", () => {
     randomStoryNumber = Math.floor(Math.random() * stories.length);
@@ -251,4 +256,5 @@ window.addEventListener("load", () => {
     renderSummary();
     renderHints();
     checkHintClicked();
+    loader();
 })

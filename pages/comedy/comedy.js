@@ -248,7 +248,14 @@ setTimeout(()=>{
     }
 },10000)
 
+// LOADER
+function loader(){
+    document.querySelector("#mini-loader").style.opacity = "0";
+    document.querySelector("#mini-loader").style.zIndex = "-1";
+}
+
 window.addEventListener("load", () => {
+    loader();
     randomStoryNumber = Math.floor(Math.random() * stories.length);
     console.log("random number: ", randomStoryNumber);
 

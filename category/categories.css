@@ -3,6 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pangolin&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme{
-    --font-cursive: 'Caveat', cursive;
+    --font-cursive: cursive;
     --font-pangolin: 'Pangolin';
 }

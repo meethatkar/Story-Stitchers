@@ -41,13 +41,13 @@ let interval = null;
 // AUDIO PART OPEN
 let tickSound = new Audio('../../category/assets/tick-tick.wav');
 tickSound.preload = 'auto';         //tells the browser to preload the sound so it's ready to play instantly with no delay.
-tickSound.volume = 0.3;
+tickSound.volume = 0.1;
 let last_10_sec_sound = new Audio('../../category/assets/last-10-sec-sound.wav');
 last_10_sec_sound.preload = 'auto';
 last_10_sec_sound.volume = 0.5;
 let timeUpSound = new Audio('../../category/assets/time-up-sound.wav');
 timeUpSound.preload = 'auto';
-timeUpSound.volume = 0.3;
+timeUpSound.volume = 0.2;
 // AUDIO PART CLOSE
 
 function timer() {
@@ -239,15 +239,21 @@ startGameBtn.addEventListener("click", () => {
     timer();            //GAME TIMER STARTED
 })
 
+// LOADER
+function loader(){
+    document.querySelector("#mini-loader").style.opacity = "0";
+    document.querySelector("#mini-loader").style.zIndex = "-1";
+}
 
 window.addEventListener("load", () => {
     randomStoryNumber = Math.floor(Math.random() * stories.length);
     console.log("random number: ", randomStoryNumber);
-
+    
     // console.log(Math.floor(Math.random() * stories.length));
     // checkHintSelection();
     renderTitle();
     renderSummary();
     renderHints();
     checkHintClicked();
+    loader();
 })
