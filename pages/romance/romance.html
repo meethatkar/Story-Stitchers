@@ -12,6 +12,15 @@
     />
   </head>
   <body class="relative font-pangolin font-semibold overflow-x-hidden bg-black md:font-cursive ">
+    
+    <!-- LOADER -->
+    <div id="mini-loader" class="h-screen w-screen bg-black/90 flex items-center justify-center absolute z-50 gap-5">
+        <div class="dots"></div>
+        <div class="dots"></div>
+        <div class="dots"></div>
+        <div class="dots"></div>
+    </div>
+    
     <!-- Incomplete selection Message DIv -->
     <div id="incomplete-selection" class="absolute inset-0 z-0 scale-80 opacity-0 text-white flex flex-col items-center px-10 py-10 text-center gap-8 transition-all ease-in-out duration-300 md:justify-center">
       <h2 class="text-[8vw] md:text-[4vw]"> <span class="text-yellow-300">Oops!</span> Just a Few <span class="text-[#4e68fd96]">More Words Needed!</span> </h2>

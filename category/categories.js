@@ -230,7 +230,6 @@ function comedyDESK(){
 }
 
 // SCI-FI
-// COMEDY
 function scifiDESK(){
     if(!isEntered){
         wrapper.classList.add("sci-fi");        
@@ -246,3 +245,14 @@ function scifiDESK(){
     })
     }
 }
+
+// LOADER
+function loader(){
+    document.querySelector("#mini-loader").style.opacity = "0";
+    document.querySelector("#mini-loader").style.zIndex = "-1";
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+    loader();
+})
+

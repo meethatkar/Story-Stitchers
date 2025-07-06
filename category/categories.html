@@ -14,7 +14,14 @@
      <link rel="preload" as="image" href="./assets/comedy.avif">
      <link rel="preload" as="image" href="./assets/sci-fi-desktop.avif">
 </head>
-<body class="transition-all duration-700 ease-in-out bg-black">
+<body class="transition-all duration-700 ease-in-out bg-black relative">
+    <!-- LOADER -->
+    <div id="mini-loader" class="h-screen w-screen bg-black/90 flex items-center justify-center absolute z-50 gap-5">
+        <div class="dots"></div>
+        <div class="dots"></div>
+        <div class="dots"></div>
+        <div class="dots"></div>
+    </div>
     <div id="wrapper-div" class="bg-gray-900 h-screen w-screen py-5 px-5 flex flex-col text-white items-center transition-all duration-300 ease-in-out opacity-100 md:justify-center md:font-cursive">
         <h1 class="text-5xl font-medium text-center mt-10 md:text-[5vw]"> Select the story category </h1>
         <div id="category-btn" class="mt-20 flex flex-wrap text-[7.5vw]  gap-5 justify-center text-gray-900 md:text-[3vw]">

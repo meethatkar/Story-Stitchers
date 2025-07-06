@@ -145,6 +145,12 @@ document.querySelector("#revealMyStry").addEventListener("click",()=>{
     
 })
 
+// LOADER
+function loader(){
+    document.querySelector("#mini-loader").style.opacity = "0";
+    document.querySelector("#mini-loader").style.zIndex = "-1";
+}
+
 window.addEventListener("load",function(){
     // USER STORY REVEAL SILDE
     this.window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[100%]"):document.querySelector("#userStory").classList.add("-right-[100%]");
@@ -158,6 +164,7 @@ window.addEventListener("load",function(){
     // AUDIO
     horrorBgm.currentTime = 0;
     horrorBgm.play();
+    loader();
 
 })
 document.querySelector("#warningContinue").addEventListener(("click"),()=>{

@@ -234,6 +234,12 @@ setTimeout(()=>{
     }
 },10000)
 
+// LOADER
+function loader(){
+    document.querySelector("#mini-loader").style.opacity = "0";
+    document.querySelector("#mini-loader").style.zIndex = "-1";
+}
+
 window.addEventListener("load", () => {
   try {
     if (!sessionStorage.getItem("randomNumber") || !sessionStorage.getItem("level")) {
@@ -242,6 +248,7 @@ window.addEventListener("load", () => {
       return;
     }
 
+    loader();
     renderStory();
     renderUserGeneratedStory();
   } catch (err) {

@@ -107,3 +107,54 @@
     top: 0%;
     transition: all 0.3s ease-in-out;
 }
+
+
+/* LOADER */
+.dots{
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    background-color: gray;
+    opacity: 0.4;
+    animation-name: waves-animation;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+.dots:nth-child(1){
+    animation-delay: 0s;
+}
+.dots:nth-child(2){
+    animation-delay: 0.4s;
+}
+.dots:nth-child(3){
+    animation-delay: 0.8s;
+}
+.dots:nth-child(4){
+    animation-delay: 1.2s;
+}
+
+@keyframes waves-animation{
+    0%{
+        transform: translateY(0%);
+            background-color: gray;
+            opacity: 0.4;
+    }
+    50%{
+        transform: translateY(-100%);
+        opacity: 1;
+        background-color: white;
+    }
+    100%{
+        transform: translateY(0%);
+            opacity: 0.4;
+            background-color: gray;
+    }
+}
+
+@media(max-width:700px){
+    .dots{
+        height: 5vw;
+        width: 5vw;
+    }}

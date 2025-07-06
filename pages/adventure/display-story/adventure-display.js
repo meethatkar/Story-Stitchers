@@ -145,7 +145,14 @@ document.querySelector("#revealMyStry").addEventListener("click",()=>{
     
 })
 
+// LOADER
+function loader(){
+    document.querySelector("#mini-loader").style.opacity = "0";
+    document.querySelector("#mini-loader").style.zIndex = "-1";
+}
+
 window.addEventListener("load",function(){
+    loader();
     // USER STORY REVEAL SILDE
     this.window.innerWidth<765 ? document.querySelector("#userStory").classList.add("top-[100%]"):document.querySelector("#userStory").classList.add("-right-[100%]");
     document.querySelector("#userStory").classList.add("z-0");
