@@ -76,29 +76,37 @@ hints.forEach((hint)=>{
 
 
 // sorting hintIndexNum array
-let currNum1 = 0;
-let currNum2 = 0;
-function sortArray(){
-    while(true){
-        let checkAll = 0;
-        for(let i=0; i<= hints.length; i++){
-            if(hintIndexNum[i]>hintIndexNum[i+1]){
-                currNum1 = hintIndexNum[i];
-                hintIndexNum[i] = hintIndexNum[i+1];
-                hintIndexNum[i+1] = currNum1;
-                currNum2 = hints[i];
-                hints[i] = hints[i+1];
-                hints[i+1] = currNum2;
-            }
-            else{
-                checkAll++;
-            }
-        }
-        if(checkAll==hints.length){
-            break;
-        }
+function sortArray() {
+  let currNum1 = 0;
+  let currNum2 = "";
+  while (true) {
+    let checkAll = 0;
+    for (let i = 0; i < hints.length - 1; i++) {
+      if (hintIndexNum[i] > hintIndexNum[i + 1]) {
+        // Swap in hintIndexNum
+        currNum1 = hintIndexNum[i];
+        hintIndexNum[i] = hintIndexNum[i + 1];
+        hintIndexNum[i + 1] = currNum1;
+
+        // Swap in hints
+        currNum2 = hints[i];
+        hints[i] = hints[i + 1];
+        hints[i + 1] = currNum2;
+
+        // Since swap happened, do NOT increase checkAll
+      } else {
+        // No swap, increase checkAll
+        checkAll++;
+      }
     }
+
+    // ✅ When all pairs were already sorted, checkAll will be hints.length - 1
+    if (checkAll === hints.length - 1) {
+      break;
+    }
+  }
 }
+
 sortArray();
 
 //HIGHLIGHTING HINT WORDS IN OG STORY

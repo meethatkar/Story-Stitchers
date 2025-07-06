@@ -50,8 +50,7 @@ body::-webkit-scrollbar {
 }
 
 .hint-clicked {
-    background-color: rgba(235, 241, 246, 0.753);
-
+    background-color: rgba(225, 0, 255, 0.473);
 }
 
 #reset-btn>button,
