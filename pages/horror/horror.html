@@ -16,13 +16,13 @@
     <div id="incomplete-selection" class="absolute inset-0 z-0 scale-80 opacity-0 text-white flex flex-col items-center px-10 py-10 text-center gap-8 transition-all ease-in-out duration-300 md:justify-center">
       <h2 class="text-[8vw] md:text-[4vw]"> <span class="text-yellow-300">Oops!</span> Just a Few <span class="text-[#4e68fd96]">More Words Needed!</span> </h2>
       <p class= "text-gray-500 text-[5vw] md:text-[2vw]"> Looks like not all words have been selected yet. <br> Please make sure to complete all your selections to submit your entry. <br> Give it another try! </p>
-      <h3 class="text-[6vw] md:text-[2.3vw]"> <span class="text-red-500/70">Incomplete selection.</span> Please select all words to submit. <button class="text-green-300 underline" id="retry">Retry</button> </h3>
+      <h3 class="text-[6vw] md:text-[2.3vw]"> <span class="text-red-500/70">Incomplete selection.</span> Please select all words to submit. <button class="text-green-300 underline hover:cursor-pointer" id="retry">Retry</button> </h3>
     </div>
 
     <!-- // DIV THAT DISPLAY WHEN TIMES UP AND ALL WORDS ARE SELECTED. -->
     <div id="redirection" class="absolute text-white inset-0 flex flex-col items-center justify-center gap-5 scale-80 opacity-0 z-0">
       <h1 class="text-[12vw] text-red-500/70 md:text-[7vw]"> Time's Up !!!</h1>
-      <h3 class="text-[6vw] text-center md:text-[3vw]"> Congrats!  you have selected all words <br> <button class="text-green-400 underline"><a href="./display-story/horror-display.html">Click here</a></button> To check <span class="text-amber-300">original Story</span></h3>
+      <h3 class="text-[6vw] text-center md:text-[3vw]"> Congrats!  you have selected all words <br> <button class="text-green-400 underline hover:cursor-pointer"><a href="./display-story/horror-display.html">Click here</a></button> To check <span class="text-amber-300">original Story</span></h3>
     </div>
 
     <!-- INTRO OR RULES PAGE, APPEAR AT START -->
@@ -55,7 +55,7 @@
           <p class="text-lg translate-x-10 text-gray-500 md:translate-x-16 md:text-2xl">Choose words as you wish; your selections create a unique/crazy story! </p>
         </div>
         </div>
-        <button class="bg-green-400 px-3 py-[1px] text-2xl rounded-lg mx-auto" id="startGame"> Play </button>
+        <button class="bg-green-400 px-3 py-[1px] text-2xl rounded-lg mx-auto hover:cursor-pointer" id="startGame"> Play </button>
      </div>
 
     <!-- MAIN STORY PAGE  -->
@@ -88,10 +88,10 @@
       class="flex flex-wrap backdrop-blur-[3px] gap-5 rounded-xl pt-4 pb-16 px-5 justify-center mx-5 relative md:gap-10 md:px-20"
     >
       <div id="reset-btn" class="absolute bottom-3 left-[20%]  text-white md:text-2xl md:left-[25%]">
-        <button class="bg-blue-500/50 px-2 py-[2px] rounded-lg">Reset</button>
+        <button class="bg-blue-500/50 px-2 py-[2px] rounded-lg hover:cursor-pointer">Reset</button>
       </div>
       <div id="submit-btn" class="absolute bottom-3 right-[20%]  text-white md:text-2xl md:right-[25%]">
-        <button class="bg-green-500/50 px-2 py-[2px] rounded-lg"> Reveal Story  </button>
+        <button class="bg-green-500/50 px-2 py-[2px] rounded-lg hover:cursor-pointer"> Reveal Story  </button>
       </div>
     </div>
     </div>
