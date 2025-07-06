@@ -111,13 +111,19 @@ sortArray();
 //HIGHLIGHTING HINT WORDS IN OG STORY
 let highlightStoryArr = [];
 let highlightStory = "";
-function highlightWords(){
-    hints.forEach((hint)=>{
-        // temp.replace(hint,"WORD ENCOUNTERED");
-        // console.log(story.split(" "+hint), hint);
-        story = story.replace(" "+hint,` <u><b>${hint}</b></u>`);
-        // console.log(story);  
-    })
+//HIGHLIGHTING HINT WORDS IN OG STORY
+function highlightWords() {
+  hints.forEach((hint) => {
+    const wordBoundaryRegex = new RegExp(`\\b${hint}\\b(?=[^\\w]|$)`); // Handles punctuation or end of string
+    const match = story.match(wordBoundaryRegex);    
+    if (match) {
+      const index = match.index;
+      story =
+        story.slice(0, index) +
+        `<u><b>${hint}</b></u>` +
+        story.slice(index + hint.length);
+    }
+  });
 }
 
 // window.addEventListener("load",()=>{
