@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magical Stories</title>
-    <link rel="stylesheet" href="magictailwind.css">
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magical story Gameplay</title>
+    <link rel="stylesheet" href="magic-tailwind.css" />
+    <link rel="stylesheet" href="custom-magic.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="relative font-pangolin font-semibold overflow-x-hidden bg-black md:font-cursive ">
+    <!-- Incomplete selection Message DIv -->
+    <div id="incomplete-selection" class="absolute inset-0 z-0 scale-80 opacity-0 text-white flex flex-col items-center px-10 py-10 text-center gap-8 transition-all ease-in-out duration-300 md:justify-center">
+      <h2 class="text-[8vw] md:text-[4vw]"> <span class="text-yellow-300">Oops!</span> Just a Few <span class="text-[#4e68fd96]">More Words Needed!</span> </h2>
+      <p class= "text-gray-500 text-[5vw] md:text-[2vw]"> Looks like not all words have been selected yet. <br> Please make sure to complete all your selections to submit your entry. <br> Give it another try! </p>
+      <h3 class="text-[6vw] md:text-[2.3vw]"> <span class="text-red-500/70">Incomplete selection.</span> Please select all words to submit. <button class="text-green-300 underline" id="retry">Retry</button> </h3>
+    </div>
+
+    <!-- // DIV THAT DISPLAY WHEN TIMES UP AND ALL WORDS ARE SELECTED. -->
+    <div id="redirection" class="absolute text-white inset-0 flex flex-col items-center justify-center gap-5 scale-80 opacity-0 z-0">
+      <h1 class="text-[12vw] text-red-500/70 md:text-[7vw]"> Time's Up !!!</h1>
+      <h3 class="text-[6vw] text-center md:text-[3vw]"> Congrats!  you have selected all words <br> <button class="text-green-400 underline"><a href="./display-story/magic-display.html">Click here</a></button> To check <span class="text-amber-300">original Story</span></h3>
+    </div>
+
+    <!-- INTRO OR RULES PAGE, APPEAR AT START -->
+     <div id="rules" class="absolute inset-0 h-screen w-screen font-pangolin bg-black z-5 flex flex-col items-start transition-all ease-in-out duration-300 text-white py-5 px-10 gap-10 md:justify-center md:items-center">
+      <h1 class="text-[8.5vw] text-center mx-auto border-l-2 border-r-2 px-1 border-gray-400 md:px-3 md:text-[3vw]"> Things to note before you Start </h1>
+      <div id="rule-1" class="mt-5 flex flex-col items-start md:w-[45%]">
+        <div class="rule-head flex items-center gap-2 text-[6.5vw] mb-2 md:text-[2.5vw]">
+          <h3 class=""> 1. Timer Challenge: </h3>
+          <i class="ri-corner-right-down-line translate-y-2"></i> </h3>
+        </div>
+        <div class="rule-descp pr-5 md:pr-0">
+          <p class="text-lg translate-x-10 text-gray-500 md:translate-x-16 md:text-2xl"> Select all words before the timer runs out! </p>
+        </div>
+      </div>
+      <div id="rule-2" class="mt-5 flex flex-col items-start md:w-[45%]">
+        <div class="rule-head flex items-center gap-2 text-[6.5vw] mb-2 md:text-[2.5vw]">
+          <h3 class=""> 2. Story Hints: </h3>
+          <i class="ri-corner-right-down-line translate-y-2"></i> </h3>
+        </div>
+        <div class="rule-descp pr-5 md:pr-0">
+          <p class="text-lg translate-x-10 text-gray-500 md:translate-x-16 md:text-2xl"> Use the Title and Summary as your guides to the narrative.</p>
+        </div>
+      </div>
+        <div id="rule-3" class="mt-5 flex flex-col items-start md:w-[45%]">
+        <div class="rule-head flex items-center gap-2 text-[6.5vw] mb-2 md:text-[2.5vw]">
+          <h3 class=""> 3. Creative Freedom: </h3>
+          <i class="ri-corner-right-down-line translate-y-2"></i> </h3>
+        </div>
+        <div class="rule-descp pr-5 md:pr-0">
+          <p class="text-lg translate-x-10 text-gray-500 md:translate-x-16 md:text-2xl">Choose words as you wish; your selections create a unique/crazy story! </p>
+        </div>
+        </div>
+        <button class="bg-green-400 px-3 py-[1px] text-2xl rounded-lg mx-auto" id="startGame"> Play </button>
+     </div>
+
+    <!-- MAIN STORY PAGE  -->
+      <div id="main-story" class="bg-black min-h-screen w-screen opacity-0 z-0 flex flex-col justify-center  transition-all ease-in-out duration-300 items-center md:justify-around">
+
+    <div id="title"></div>
+    <div id="summary" class="text-center">
+      <span class="text-[6vw] mt-5 md:mt-0 text-green-400/70 md:text-blue-300 text-shadow-xs text-shadow-white md:text-[2.5vw]">
+        Summary of Story
+      </span>
+    </div>
+
+    <!-- TIMER -->
+    <div
+      id="timer"
+      class="h-15 w-1/2 my-1 text-center text-white text-shadow-yellow-950 text-shadow-lg md:my-0">
+      <p class="text-3xl md:text-5xl">00:00</p>
+    </div>
+    <!-- HINT -->
+    <div id="hint-text" class="flex justify-center items-center mb-2 text-[4vw] md:text-[2vw]">
+      <i class="ri-corner-left-down-line text-green-400/70 text-shadow-green-950 text-shadow-xs md:text-shadow-2xs md:text-shadow-white translate-y-2 text-xl  md:text-blue-200 md:text-4xl"></i>
+      <h1 class=" text-green-400/70 text-shadow-green-950 text-shadow-xs md:text-shadow-2xs md:text-shadow-white md:text-blue-200/80 w-9/12 md:w-fit text-xl text-center md:text-3xl">
+        Select the words to complete the unseen story
+      </h1>
+      <i class="ri-corner-right-down-line text-green-400/70 text-shadow-green-950 text-shadow-xs md:text-shadow-2xs md:text-shadow-white translate-y-2 text-xl  md:text-blue-200 md:text-4xl"></i>
+    </div>
+    <div
+      id="hint-block"
+      class="flex flex-wrap backdrop-blur-[3px] gap-5 rounded-xl pt-4 pb-16 px-5 justify-center mx-5 relative bg-[#3ff05c27] md:gap-10 md:px-20 md:bg-[#60f1de2f]"
+    >
+      <div id="reset-btn" class="absolute bottom-3 left-[20%]  text-white md:text-2xl md:left-[25%]">
+        <button class="bg-blue-500/80 px-2 py-[2px] rounded-lg">Reset</button>
+      </div>
+      <div id="submit-btn" class="absolute bottom-3 right-[20%]  text-white md:text-2xl md:right-[25%]">
+        <button class="bg-green-500/80 px-2 py-[2px] rounded-lg"> Reveal Story  </button>
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+<!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="stories.js" type="module"></script>
+    <script src="magic.js" type="module"></script>
+  </body>
 </html>
